@@ -99,7 +99,7 @@ export const GlassDialogTitle = forwardRef<
     <DialogPrimitive.Title
         ref={ref}
         className={cn(
-            "text-lg font-semibold text-[var(--aether-text)]",
+            "text-lg font-semibold text-[var(--koori-text)]",
             className,
         )}
         {...props}
@@ -118,7 +118,7 @@ export const GlassDialogDescription = forwardRef<
 >(({ className, ...props }, ref) => (
     <DialogPrimitive.Description
         ref={ref}
-        className={cn("mt-2 text-sm text-[var(--aether-muted)]", className)}
+        className={cn("mt-2 text-sm text-[var(--koori-muted)]", className)}
         {...props}
     />
 ));

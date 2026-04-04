@@ -44,8 +44,8 @@ export const GlassButton = forwardRef<HTMLButtonElement, GlassButtonProps>(
 
         const variantClasses =
             variant === "primary"
-                ? "bg-[var(--aether-primary)]/20 text-[var(--aether-primary)] hover:bg-[var(--aether-primary)]/30 border-[var(--aether-primary)]/30"
-                : "text-[var(--aether-text)] hover:bg-white/10";
+                ? "bg-[var(--koori-primary)]/20 text-[var(--koori-primary)] hover:bg-[var(--koori-primary)]/30 border-[var(--koori-primary)]/30"
+                : "text-[var(--koori-text)] hover:bg-white/10";
 
         return (
             <button

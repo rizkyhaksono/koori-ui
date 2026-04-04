@@ -1,14 +1,14 @@
 /* ==========================================================================
-   Aether UI — Premium Glass Design System
+   Koori UI — Premium Glass Design System
    ========================================================================== */
 
 /* ---------- Color Tokens ---------- */
 :root {
-  --aether-bg: #0b0f19;
-  --aether-text: #e6eaf2;
-  --aether-muted: #94a3b8;
-  --aether-primary: #818cf8;
-  --aether-accent: #c084fc;
+  --koori-bg: #0b0f19;
+  --koori-text: #e6eaf2;
+  --koori-muted: #94a3b8;
+  --koori-primary: #818cf8;
+  --koori-accent: #c084fc;
 }
 
 /* ---------- Premium Glass Base ---------- */

@@ -16,7 +16,7 @@ export const GlassInput = forwardRef<HTMLInputElement, GlassInputProps>(
             type={type}
             className={cn(
                 "glass w-full px-4 py-2.5 text-sm",
-                "text-[var(--aether-text)] placeholder:text-[var(--aether-muted)]",
+                "text-[var(--koori-text)] placeholder:text-[var(--koori-muted)]",
                 "bg-white/[0.04]",
                 "outline-none transition-all duration-150 ease-out",
                 "focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-transparent",
