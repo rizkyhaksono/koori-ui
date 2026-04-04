@@ -100,7 +100,29 @@ koori-ui/
   src/            # Library source (components + styles)
   examples/nextjs/ # Next.js demo app showcasing all components
   docs/           # Fumadocs-based documentation site (Next.js + MDX)
-  packages/mcp/   # MCP server for component search in Claude Code
+  packages/mcp/           # MCP server for component search in Claude Code
+  packages/create-koori-app/  # npx create-koori-app CLI scaffolder
+```
+
+## KooriProvider (Theme System)
+
+`KooriProvider` wraps the app and handles dark/light/system theme + color scheme. It:
+- Persists preference to `localStorage` (`koori-theme`, `koori-color-scheme`)
+- Injects an inline script to prevent FOUC before React hydrates
+- Listens to OS `prefers-color-scheme` when `theme="system"`
+- Provides `useKooriTheme()` hook: `{ theme, resolvedTheme, colorScheme, setTheme, setColorScheme }`
+
+Usage in Next.js `app/layout.tsx`:
+```tsx
+import { KooriProvider } from "koori-ui";
+
+<html suppressHydrationWarning>
+  <body>
+    <KooriProvider defaultTheme="dark">
+      {children}
+    </KooriProvider>
+  </body>
+</html>
 ```
 
 ## MCP Server Setup
