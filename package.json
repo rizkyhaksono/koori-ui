@@ -1,6 +1,6 @@
 {
   "name": "koori-ui",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Soft glass UI components built on Radix UI for React 19",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,10 +25,11 @@
     "*.css"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && npx tailwindcss -i src/styles/glass.css -o dist/index.css",
     "typecheck": "tsc --noEmit",
     "dev": "tsup --watch",
     "clean": "rm -rf dist",
+    "release:patch": "npm version patch --no-git-tag-version && npm run build && npm pack",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -36,15 +37,21 @@
     "react-dom": ">=19"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-tabs": "^1.1.13",
     "clsx": "^2.1.1",
+    "lucide-react": "^1.7.0",
+    "recharts": "^3.8.1",
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwindcss": "^4.2.2",
     "tsup": "^8.4.0",
     "typescript": "^5.7.0"
   },

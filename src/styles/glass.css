@@ -2,79 +2,200 @@
    Koori UI — Premium Glass Design System
    ========================================================================== */
 
-/* ---------- Color Tokens ---------- */
+@import "tailwindcss";
+@source "../components";
+
+/* ==========================================================================
+   COLOR SYSTEM — Shadcn-inspired Light/Dark Mode + Theme Presets
+   ========================================================================== */
+
+/* ---------- Light Mode (Default) ---------- */
 :root {
+  --koori-bg: #f8fafc;
+  --koori-text: #0f172a;
+  --koori-muted: #64748b;
+  --koori-primary: #3b82f6;
+  --koori-accent: #06b6d4;
+  --koori-border: rgba(15, 23, 42, 0.12);
+  --koori-card: rgba(255, 255, 255, 0.72);
+  --koori-card-subtle: rgba(255, 255, 255, 0.48);
+  --koori-card-elevated: rgba(255, 255, 255, 0.85);
+  --koori-glass-border: rgba(15, 23, 42, 0.1);
+  --koori-glass-border-top: rgba(255, 255, 255, 0.8);
+  --koori-glass-border-left: rgba(255, 255, 255, 0.5);
+  --koori-glass-shadow: rgba(0, 0, 0, 0.08);
+  --koori-glass-inset: rgba(255, 255, 255, 0.9);
+  --koori-glass-hover-border: rgba(15, 23, 42, 0.18);
+
+  /* Backward-compat aliases */
+  --aether-bg: var(--koori-bg);
+  --aether-text: var(--koori-text);
+  --aether-muted: var(--koori-muted);
+  --aether-primary: var(--koori-primary);
+  --aether-accent: var(--koori-accent);
+}
+
+/* ---------- Dark Mode ---------- */
+.dark {
   --koori-bg: #0b0f19;
   --koori-text: #e6eaf2;
   --koori-muted: #94a3b8;
-  --koori-primary: #818cf8;
-  --koori-accent: #c084fc;
+  --koori-primary: #7bb5ff;
+  --koori-accent: #8ff0e8;
+  --koori-border: rgba(183, 218, 255, 0.22);
+  --koori-card: rgba(171, 206, 255, 0.2);
+  --koori-card-subtle: rgba(171, 206, 255, 0.14);
+  --koori-card-elevated: rgba(188, 220, 255, 0.28);
+  --koori-glass-border: rgba(183, 218, 255, 0.22);
+  --koori-glass-border-top: rgba(222, 238, 255, 0.3);
+  --koori-glass-border-left: rgba(216, 236, 255, 0.22);
+  --koori-glass-shadow: rgba(0, 0, 0, 0.45);
+  --koori-glass-inset: rgba(255, 255, 255, 0.16);
+  --koori-glass-hover-border: rgba(212, 235, 255, 0.34);
 }
 
+/* ==========================================================================
+   THEME PRESETS — Apply via data-theme attribute on <html>
+   ========================================================================== */
+
+/* --- Slate (Cool Blue-Gray) --- */
+[data-theme="slate"] {
+  --koori-bg: #f8fafc;
+  --koori-text: #0f172a;
+  --koori-muted: #64748b;
+  --koori-primary: #6366f1;
+  --koori-accent: #818cf8;
+}
+[data-theme="slate"].dark {
+  --koori-bg: #0f172a;
+  --koori-text: #e2e8f0;
+  --koori-muted: #94a3b8;
+  --koori-primary: #818cf8;
+  --koori-accent: #a5b4fc;
+}
+
+/* --- Zinc (Pure Desaturated Gray) --- */
+[data-theme="zinc"] {
+  --koori-bg: #fafafa;
+  --koori-text: #18181b;
+  --koori-muted: #71717a;
+  --koori-primary: #3b82f6;
+  --koori-accent: #06b6d4;
+}
+[data-theme="zinc"].dark {
+  --koori-bg: #09090b;
+  --koori-text: #e4e4e7;
+  --koori-muted: #a1a1aa;
+  --koori-primary: #60a5fa;
+  --koori-accent: #22d3ee;
+}
+
+/* --- Neutral (Warm Gray) --- */
+[data-theme="neutral"] {
+  --koori-bg: #fafaf9;
+  --koori-text: #171717;
+  --koori-muted: #737373;
+  --koori-primary: #f97316;
+  --koori-accent: #fb923c;
+}
+[data-theme="neutral"].dark {
+  --koori-bg: #0a0a0a;
+  --koori-text: #e5e5e5;
+  --koori-muted: #a3a3a3;
+  --koori-primary: #fb923c;
+  --koori-accent: #fdba74;
+}
+
+/* --- Violet (Deep Purple) --- */
+[data-theme="violet"] {
+  --koori-bg: #faf5ff;
+  --koori-text: #1e1b4b;
+  --koori-muted: #7c3aed;
+  --koori-primary: #8b5cf6;
+  --koori-accent: #a78bfa;
+}
+[data-theme="violet"].dark {
+  --koori-bg: #0c0a1a;
+  --koori-text: #ede9fe;
+  --koori-muted: #a78bfa;
+  --koori-primary: #a78bfa;
+  --koori-accent: #c4b5fd;
+}
+
+/* ==========================================================================
+   GLASS COMPONENT STYLES
+   ========================================================================== */
+
 /* ---------- Premium Glass Base ---------- */
-.glass {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top-color: rgba(255, 255, 255, 0.2);
-  border-left-color: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
+.glass,
+.glass-subtle,
+.glass-elevated {
+  color: var(--koori-text);
+  border: 1px solid var(--koori-glass-border);
+  border-top-color: var(--koori-glass-border-top);
+  border-left-color: var(--koori-glass-border-left);
   box-shadow:
-    0 4px 24px -1px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    0 10px 32px -8px var(--koori-glass-shadow),
+    inset 0 1px 0 var(--koori-glass-inset);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glass {
+  background: var(--koori-card);
+  backdrop-filter: blur(20px) saturate(130%);
+  -webkit-backdrop-filter: blur(20px) saturate(130%);
+  border-radius: 16px;
 }
 
 /* ---------- Glass Variants ---------- */
 .glass-subtle {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.04) 0%,
-      rgba(255, 255, 255, 0.01) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-top-color: rgba(255, 255, 255, 0.1);
+  background: var(--koori-card-subtle);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
   border-radius: 12px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  transition: all 0.3s ease;
+  box-shadow:
+    0 6px 20px -8px var(--koori-glass-shadow),
+    inset 0 1px 0 var(--koori-glass-inset);
 }
 
 .glass-elevated {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(255, 255, 255, 0.03) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.2);
+  background: var(--koori-card-elevated);
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
   border-radius: 20px;
   box-shadow:
-    0 20px 40px -8px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    0 22px 44px -14px var(--koori-glass-shadow),
+    inset 0 1px 0 var(--koori-glass-inset);
 }
 
 .glass:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  border-top-color: rgba(255, 255, 255, 0.25);
+  border-color: var(--koori-glass-hover-border);
   box-shadow:
-    0 8px 32px -4px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    0 16px 38px -12px var(--koori-glass-shadow),
+    inset 0 1px 0 var(--koori-glass-inset);
 }
 
 .glass-elevated:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow:
-    0 30px 60px -12px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 28px 56px -18px var(--koori-glass-shadow),
+    inset 0 1px 0 var(--koori-glass-inset);
 }
 
-/* Base button styles since the original library uses glass classes for buttons too */
+@supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+  .glass,
+  .glass-subtle,
+  .glass-elevated {
+    background: rgba(18, 28, 48, 0.84);
+  }
+  :root .glass,
+  :root .glass-subtle,
+  :root .glass-elevated {
+    background: rgba(240, 245, 255, 0.92);
+  }
+}
+
+/* Base button styles */
 button.glass,
 button.glass-subtle,
 button.glass-elevated {
@@ -83,5 +204,295 @@ button.glass-elevated {
 }
 
 button.glass:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================================================
+   BODY & LAYOUT (theme-aware)
+   ========================================================================== */
+
+body {
+  background: var(--koori-bg);
+  color: var(--koori-text);
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Light mode subtle background gradient */
+:root body {
+  background-image:
+    radial-gradient(circle at 14% 18%, rgba(59, 130, 246, 0.06), transparent 30%),
+    radial-gradient(circle at 85% 74%, rgba(6, 182, 212, 0.05), transparent 32%);
+}
+
+/* Dark mode rich background gradient */
+.dark body {
+  background-image:
+    radial-gradient(circle at 14% 18%, rgba(123, 181, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 74%, rgba(143, 240, 232, 0.12), transparent 32%),
+    linear-gradient(160deg, #0b0f19 0%, #071026 52%, #050a18 100%);
+}
+
+/* ==========================================================================
+   AMBIENT EFFECTS (Dark mode only)
+   ========================================================================== */
+
+.ambient-orb {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  animation: drift 18s ease-in-out infinite alternate;
+  transition: opacity 0.6s ease;
+}
+
+.dark .ambient-orb {
+  opacity: 0.48;
+}
+
+.ambient-orb--one {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(123, 181, 255, 0.95) 0%, rgba(123, 181, 255, 0.05) 70%);
+  top: -140px;
+  left: -120px;
+}
+
+.ambient-orb--two {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(143, 240, 232, 0.9) 0%, rgba(143, 240, 232, 0.04) 72%);
+  right: -120px;
+  bottom: -120px;
+  animation-delay: -8s;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -26px) scale(1.08);
+  }
+  100% {
+    transform: translate(-18px, 22px) scale(0.94);
+  }
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.dark .noise-overlay {
+  opacity: 0.045;
+}
+
+.glow-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background-image:
+    linear-gradient(rgba(148, 180, 219, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 180, 219, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 40% 36%, black 16%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at 40% 36%, black 16%, transparent 75%);
+}
+
+.dark .glow-grid {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   SHOWCASE / DEMO LAYOUT
+   ========================================================================== */
+
+.site-wrap {
+  width: min(1160px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.hero-wrap {
+  text-align: center;
+  margin: 0 auto;
+  width: min(760px, 100%);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--koori-accent);
+  border: 1px solid color-mix(in srgb, var(--koori-accent) 35%, transparent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--koori-accent) 20%, transparent), color-mix(in srgb, var(--koori-primary) 18%, transparent));
+  border-radius: 999px;
+  padding: 0.38rem 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero-title {
+  font-family: var(--font-display), -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: clamp(2.4rem, 5.6vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(140deg, var(--koori-text) 8%, var(--koori-primary) 46%, var(--koori-accent) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  margin: 1rem auto 0;
+  max-width: 640px;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  line-height: 1.62;
+  color: var(--koori-muted);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.showcase-shell {
+  border-radius: 1.5rem;
+  border: 1px solid var(--koori-border);
+  background: var(--koori-card-elevated);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  box-shadow:
+    0 20px 70px var(--koori-glass-shadow),
+    inset 0 1px 0 var(--koori-glass-inset);
+}
+
+.demo-section {
+  position: relative;
+  padding: 2.15rem 0;
+}
+
+.demo-section+.demo-section {
+  border-top: 1px solid var(--koori-border);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--koori-primary);
+  margin-bottom: 1.25rem;
+  padding: 0.32rem 0.8rem;
+  background: linear-gradient(140deg, color-mix(in srgb, var(--koori-primary) 22%, transparent), color-mix(in srgb, var(--koori-accent) 16%, transparent));
+  border: 1px solid color-mix(in srgb, var(--koori-primary) 24%, transparent);
+  border-radius: 999px;
+}
+
+.section-description {
+  font-size: 0.98rem;
+  color: var(--koori-muted);
+  margin-bottom: 1.35rem;
+  max-width: 46rem;
+  line-height: 1.62;
+}
+
+.code-block {
+  margin: 1.7rem auto 0;
+  width: min(640px, 100%);
+  background: color-mix(in srgb, var(--koori-bg) 80%, transparent);
+  border: 1px solid var(--koori-border);
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+  font-family: var(--font-mono), "JetBrains Mono", "IBM Plex Mono", monospace;
+  font-size: 0.84rem;
+  color: var(--koori-muted);
+  overflow-x: auto;
+  line-height: 1.6;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.code-block .kw {
+  color: var(--koori-primary);
+}
+
+.code-block .str {
+  color: var(--koori-accent);
+}
+
+.code-block .fn {
+  color: var(--koori-primary);
+}
+
+.code-block .comp {
+  color: #f7dba2;
+}
+
+.demo-footer {
+  text-align: center;
+  padding: 3.6rem 0 1.9rem;
+  color: var(--koori-muted);
+  font-size: 0.86rem;
+  border-top: 1px solid var(--koori-border);
+}
+
+.demo-footer a {
+  color: var(--koori-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.demo-footer a:hover {
+  color: var(--koori-accent);
+}
+
+.timeline-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--koori-primary), var(--koori-accent));
+  box-shadow: 0 0 14px color-mix(in srgb, var(--koori-primary) 70%, transparent);
+}
+
+@media (max-width: 768px) {
+  .site-wrap {
+    width: min(1160px, calc(100% - 1.2rem));
+  }
+  .hero-actions {
+    gap: 0.65rem;
+  }
+  .section-description {
+    font-size: 0.92rem;
+  }
+  .showcase-shell {
+    border-radius: 1.1rem;
+  }
 }

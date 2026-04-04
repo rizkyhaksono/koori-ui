@@ -166,6 +166,35 @@ import {
 
 ---
 
+### GlassChart (Recharts Component)
+
+Premium, automatically responsive glassmorphism wrappers for Recharts.
+
+```tsx
+import { GlassAreaChart, GlassBarChart } from "koori-ui";
+
+const chartData = [
+  { name: "Jan", revenue: 4000, users: 2400 },
+  { name: "Feb", revenue: 3000, users: 1398 },
+];
+
+<GlassAreaChart
+  data={chartData}
+  index="name"
+  categories={[{ key: "revenue", color: "var(--koori-primary)", name: "Revenue" }]}
+/>
+```
+
+---
+
+## 🤖 Model Context Protocol (MCP) & Copy-Paste Setup [SOON]
+
+We are currently building **native MCP (Model Context Protocol)** support! Soon, you will be able to simply expose Koori UI to any agent and have it automatically scaffold React components for you. 
+
+We will also provide copy-pasteable Markdown recipes for every complex component directly in our documentation so your AI assistants can use them perfectly every time!
+
+---
+
 ## Theming
 
 Override CSS custom properties to customize the palette:

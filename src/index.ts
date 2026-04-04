@@ -1,8 +1,12 @@
-/* ---------- Styles (side-effect import) ---------- */
-import "./styles/glass.css";
-
 /* ---------- Utilities ---------- */
 export { cn } from "./utils/cn";
+
+/* ---------- GlassChart ---------- */
+export {
+    GlassAreaChart,
+    GlassBarChart,
+    GlassChartTooltip,
+} from "./components/glass-chart/glass-chart";
 
 /* ---------- GlassPanel ---------- */
 export { GlassPanel } from "./components/glass-panel";
@@ -51,3 +55,33 @@ export type {
     GlassDialogTitleProps,
     GlassDialogDescriptionProps,
 } from "./components/glass-dialog";
+
+/* ---------- GlassBadge ---------- */
+export { GlassBadge } from "./components/glass-badge";
+export type { GlassBadgeProps, GlassBadgeVariant } from "./components/glass-badge";
+
+/* ---------- GlassTabs ---------- */
+export {
+    GlassTabs,
+    GlassTabsList,
+    GlassTabsTrigger,
+    GlassTabsContent,
+} from "./components/glass-tabs";
+export type {
+    GlassTabsProps,
+    GlassTabsListProps,
+    GlassTabsTriggerProps,
+    GlassTabsContentProps,
+} from "./components/glass-tabs";
+
+/* ---------- GlassAvatar ---------- */
+export {
+    GlassAvatar,
+    GlassAvatarImage,
+    GlassAvatarFallback,
+} from "./components/glass-avatar";
+export type {
+    GlassAvatarProps,
+    GlassAvatarImageProps,
+    GlassAvatarFallbackProps,
+} from "./components/glass-avatar";

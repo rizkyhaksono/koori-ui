@@ -1,0 +1,12 @@
+export {
+    GlassTabs,
+    GlassTabsList,
+    GlassTabsTrigger,
+    GlassTabsContent,
+} from "./glass-tabs";
+export type {
+    GlassTabsProps,
+    GlassTabsListProps,
+    GlassTabsTriggerProps,
+    GlassTabsContentProps,
+} from "./glass-tabs";
