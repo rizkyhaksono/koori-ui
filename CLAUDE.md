@@ -58,7 +58,6 @@ All components use `forwardRef`, extend the native HTML element props they rende
 `src/styles/glass.css` is the single CSS source. Key design:
 - Three glass utility classes: `.glass`, `.glass-subtle`, `.glass-elevated` — applied directly in component `className` strings
 - Theming via CSS custom properties (`--koori-*`): 8 color tokens scoped to `:root`, `.dark`, and `[data-theme="slate|zinc|neutral|violet"]`
-- Old `--aether-*` variable names are aliased for backward compatibility
 - Tailwind v4 is used with `@source "../components"` to scan component files for class generation
 
 ### Exports
@@ -90,3 +89,35 @@ The theme tokens available in component styles:
 
 - `glass-chart` is the only component that does not follow the standard two-file pattern. It exports directly (no `index.ts`) and uses plain functions instead of `forwardRef`.
 - `lucide-react` is a bundled dependency and available for use in components.
+- New status color tokens: `--koori-success`, `--koori-warning`, `--koori-error`, `--koori-info` (light + dark values set).
+- New radius tokens: `--koori-radius-sm/md/lg/xl/full`.
+- New typography tokens: `--koori-font-sans`, `--koori-font-mono`, `--koori-font-display`.
+
+## Repository Structure
+
+```
+koori-ui/
+  src/            # Library source (components + styles)
+  examples/nextjs/ # Next.js demo app showcasing all components
+  docs/           # Fumadocs-based documentation site (Next.js + MDX)
+  packages/mcp/   # MCP server for component search in Claude Code
+```
+
+## MCP Server Setup
+
+To add Koori UI component search to Claude Code, add to `.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "koori-ui": {
+      "command": "node",
+      "args": ["/home/sarana3/workspace/personal/koori-ui/packages/mcp/dist/index.js"]
+    }
+  }
+}
+```
+
+Build the MCP server first: `cd packages/mcp && npm run build`
+
+Available MCP tools: `list_components`, `get_component_docs`, `search_components`, `get_component_example`.
