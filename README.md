@@ -209,14 +209,6 @@ npm run typecheck   # tsc --noEmit
 npm run dev         # watch mode
 ```
 
----
-
-## Publishing to npm
-
-See [PUBLISHING.md](./PUBLISHING.md) for step-by-step instructions.
-
----
-
 ## License
 
 MIT
