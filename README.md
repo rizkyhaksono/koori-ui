@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>✦ Aether UI</strong>
+  <strong>✦ Koori UI</strong>
 </p>
 
 <p align="center">
@@ -7,9 +7,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/npm/v/aether-ui?style=flat-square&color=6C8CFF" alt="npm version" />
-  <img src="https://img.shields.io/npm/l/aether-ui?style=flat-square" alt="license" />
-  <img src="https://img.shields.io/bundlephobia/minzip/aether-ui?style=flat-square&color=6C8CFF" alt="bundle size" />
+  <img src="https://img.shields.io/npm/v/koori-ui?style=flat-square&color=6C8CFF" alt="npm version" />
+  <img src="https://img.shields.io/npm/l/koori-ui?style=flat-square" alt="license" />
+  <img src="https://img.shields.io/bundlephobia/minzip/koori-ui?style=flat-square&color=6C8CFF" alt="bundle size" />
 </p>
 
 ---
@@ -28,7 +28,7 @@
 ## Installation
 
 ```bash
-npm install aether-ui
+npm install koori-ui
 ```
 
 > **Peer dependencies:** `react >= 19` and `react-dom >= 19`
@@ -40,13 +40,13 @@ npm install aether-ui
 Import the styles **once** in your app's entry point:
 
 ```tsx
-import "aether-ui/styles.css";
+import "koori-ui/styles.css";
 ```
 
 Then use the components:
 
 ```tsx
-import { GlassPanel, GlassButton, GlassInput } from "aether-ui";
+import { GlassPanel, GlassButton, GlassInput } from "koori-ui";
 
 export default function App() {
   return (
@@ -92,7 +92,7 @@ import {
   GlassCardHeader,
   GlassCardBody,
   GlassCardFooter,
-} from "aether-ui";
+} from "koori-ui";
 
 <GlassCard>
   <GlassCardHeader>Title</GlassCardHeader>
@@ -148,7 +148,7 @@ import {
   GlassDialogTitle,
   GlassDialogDescription,
   GlassDialogClose,
-} from "aether-ui";
+} from "koori-ui";
 
 <GlassDialog>
   <GlassDialogTrigger asChild>
@@ -172,10 +172,10 @@ Override CSS custom properties to customize the palette:
 
 ```css
 :root {
-  --aether-bg: #0b0f19;
-  --aether-text: #e6eaf2;
-  --aether-muted: #a1a7b3;
-  --aether-primary: #6c8cff;
+  --koori-bg: #0b0f19;
+  --koori-text: #e6eaf2;
+  --koori-muted: #a1a7b3;
+  --koori-primary: #6c8cff;
 }
 ```
 
@@ -183,7 +183,7 @@ For example, switch to a purple accent:
 
 ```css
 :root {
-  --aether-primary: #a78bfa;
+  --koori-primary: #a78bfa;
 }
 ```
 
