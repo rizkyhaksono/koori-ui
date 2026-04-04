@@ -1,17 +1,15 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import {
     Area,
     AreaChart,
     Bar,
     BarChart,
     CartesianGrid,
-    Line,
-    LineChart,
     ResponsiveContainer,
     Tooltip,
     XAxis,
     YAxis,
-    TooltipProps,
 } from "recharts";
 import { cn } from "../../utils/cn";
 
@@ -65,6 +63,13 @@ export function GlassAreaChart({
     categories: { key: string; color: string; name?: string }[];
     index: string;
 }) {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) {
+        return <div className={cn("w-full", className)} style={{ height, minHeight: height }} />;
+    }
+
     return (
         <div className={cn("w-full", className)} style={{ height, minHeight: height, minWidth: 0 }}>
             <ResponsiveContainer width="100%" height="100%">
@@ -127,6 +132,13 @@ export function GlassBarChart({
     categories: { key: string; color: string; name?: string }[];
     index: string;
 }) {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) {
+        return <div className={cn("w-full", className)} style={{ height, minHeight: height }} />;
+    }
+
     return (
         <div className={cn("w-full", className)} style={{ height, minHeight: height, minWidth: 0 }}>
             <ResponsiveContainer width="100%" height="100%">

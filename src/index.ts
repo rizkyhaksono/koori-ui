@@ -1,6 +1,15 @@
 /* ---------- Utilities ---------- */
 export { cn } from "./utils/cn";
 
+/* ---------- KooriProvider ---------- */
+export { KooriProvider, useKooriTheme } from "./components/glass-provider";
+export type {
+    KooriProviderProps,
+    KooriTheme,
+    KooriColorScheme,
+    KooriThemeContextValue,
+} from "./components/glass-provider";
+
 /* ---------- GlassChart ---------- */
 export {
     GlassAreaChart,
