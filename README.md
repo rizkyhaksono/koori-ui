@@ -14,11 +14,11 @@
 
 ---
 
-## Live Demo
+## Live Demo & Docs
 
-**[View the interactive demo →](https://koori-ui-example-nextjs.vercel.app)**
+**[View the interactive demo & documentation →](https://koori-ui.vercel.app)**
 
-Explore all 27+ components, themes, and color presets in action.
+Explore all 27+ components, theming, and color presets in action. Full component documentation included.
 
 ---
 

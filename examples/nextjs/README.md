@@ -1,6 +1,6 @@
 # Koori UI — Next.js Example
 
-**Live demo: [https://koori-ui-example-nextjs.vercel.app](https://koori-ui-example-nextjs.vercel.app)**
+**Live demo: [https://koori-ui.vercel.app](https://koori-ui.vercel.app)**
 
 This is a fully-featured demonstration of the Koori UI component library, built with Next.js. It showcases all 27+ components, theming capabilities, and color presets in action.
 
