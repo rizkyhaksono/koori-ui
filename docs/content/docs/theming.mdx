@@ -1,0 +1,85 @@
+---
+title: Theming
+description: Customize colors, radius, and typography using CSS custom properties.
+---
+
+## Color Modes
+
+Apply `class="dark"` to `<html>` for dark mode:
+
+```html
+<html class="dark">
+```
+
+## Theme Presets
+
+Apply `data-theme` to `<html>` to switch color presets:
+
+```html
+<html data-theme="slate">   <!-- Cool blue-gray -->
+<html data-theme="zinc">    <!-- Desaturated gray -->
+<html data-theme="neutral"> <!-- Warm orange -->
+<html data-theme="violet">  <!-- Deep purple -->
+```
+
+Combine with dark mode:
+
+```html
+<html class="dark" data-theme="violet">
+```
+
+## Glass Utility Classes
+
+Three intensity levels are available as CSS classes:
+
+| Class | Use case |
+| --- | --- |
+| `.glass` | Standard panels, cards |
+| `.glass-subtle` | Backgrounds, form inputs |
+| `.glass-elevated` | Modals, dropdowns, toasts |
+
+## CSS Custom Properties
+
+Override any token in your stylesheet:
+
+```css
+:root {
+  --koori-primary: #8b5cf6;
+  --koori-accent: #a78bfa;
+}
+```
+
+### Color tokens
+
+| Token | Description |
+| --- | --- |
+| `--koori-bg` | Page background |
+| `--koori-text` | Primary text |
+| `--koori-muted` | Secondary/muted text |
+| `--koori-primary` | Brand primary color |
+| `--koori-accent` | Brand accent color |
+| `--koori-border` | Default border color |
+| `--koori-success` | Success state |
+| `--koori-warning` | Warning state |
+| `--koori-error` | Error state |
+| `--koori-info` | Info state |
+
+### Glass surface tokens
+
+| Token | Description |
+| --- | --- |
+| `--koori-card` | Standard glass surface |
+| `--koori-card-subtle` | Subtle glass surface |
+| `--koori-card-elevated` | Elevated glass surface |
+| `--koori-glass-border` | Glass border color |
+| `--koori-glass-shadow` | Glass drop shadow |
+
+### Radius tokens
+
+| Token | Value |
+| --- | --- |
+| `--koori-radius-sm` | 6px |
+| `--koori-radius-md` | 10px |
+| `--koori-radius-lg` | 16px |
+| `--koori-radius-xl` | 20px |
+| `--koori-radius-full` | 9999px |

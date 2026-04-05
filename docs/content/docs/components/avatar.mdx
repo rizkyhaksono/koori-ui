@@ -1,0 +1,56 @@
+---
+title: GlassAvatar
+description: A glassmorphism-styled avatar powered by Radix UI with image and fallback support.
+---
+
+## Usage
+
+```tsx
+import { GlassAvatar, GlassAvatarImage, GlassAvatarFallback } from "koori-ui";
+
+<GlassAvatar>
+  <GlassAvatarImage src="https://example.com/avatar.jpg" alt="Jane Doe" />
+  <GlassAvatarFallback>JD</GlassAvatarFallback>
+</GlassAvatar>
+```
+
+## Fallback Only
+
+When no image src is provided or the image fails to load, the fallback renders automatically.
+
+```tsx
+<GlassAvatar>
+  <GlassAvatarFallback>AB</GlassAvatarFallback>
+</GlassAvatar>
+```
+
+## Custom Size
+
+```tsx
+<GlassAvatar className="h-16 w-16">
+  <GlassAvatarImage src="/photo.jpg" alt="Profile" />
+  <GlassAvatarFallback>PH</GlassAvatarFallback>
+</GlassAvatar>
+```
+
+## Props — GlassAvatar
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `className` | `string` | — | Custom size or additional classes |
+
+## Props — GlassAvatarImage
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `src` | `string` | — | Image URL |
+| `alt` | `string` | — | Accessible alt text |
+
+## Props — GlassAvatarFallback
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `delayMs` | `number` | — | Delay before fallback renders (avoids flash) |
+| `children` | `ReactNode` | — | Initials or icon to show as fallback |
+
+All Radix `Avatar.*` props are also accepted.

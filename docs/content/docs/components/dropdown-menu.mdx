@@ -1,0 +1,76 @@
+---
+title: GlassDropdownMenu
+description: A glassmorphism-styled dropdown menu powered by Radix UI.
+---
+
+## Usage
+
+```tsx
+import {
+  GlassDropdownMenu,
+  GlassDropdownMenuTrigger,
+  GlassDropdownMenuContent,
+  GlassDropdownMenuItem,
+  GlassButton,
+} from "koori-ui";
+
+<GlassDropdownMenu>
+  <GlassDropdownMenuTrigger asChild>
+    <GlassButton>Open menu</GlassButton>
+  </GlassDropdownMenuTrigger>
+  <GlassDropdownMenuContent>
+    <GlassDropdownMenuItem>Profile</GlassDropdownMenuItem>
+    <GlassDropdownMenuItem>Settings</GlassDropdownMenuItem>
+    <GlassDropdownMenuItem>Sign out</GlassDropdownMenuItem>
+  </GlassDropdownMenuContent>
+</GlassDropdownMenu>
+```
+
+## With Labels and Separator
+
+```tsx
+import {
+  GlassDropdownMenu, GlassDropdownMenuTrigger, GlassDropdownMenuContent,
+  GlassDropdownMenuLabel, GlassDropdownMenuItem, GlassDropdownMenuSeparator,
+  GlassButton,
+} from "koori-ui";
+
+<GlassDropdownMenu>
+  <GlassDropdownMenuTrigger asChild>
+    <GlassButton>Account</GlassButton>
+  </GlassDropdownMenuTrigger>
+  <GlassDropdownMenuContent>
+    <GlassDropdownMenuLabel>My Account</GlassDropdownMenuLabel>
+    <GlassDropdownMenuSeparator />
+    <GlassDropdownMenuItem>Profile</GlassDropdownMenuItem>
+    <GlassDropdownMenuItem>Billing</GlassDropdownMenuItem>
+    <GlassDropdownMenuSeparator />
+    <GlassDropdownMenuItem>Sign out</GlassDropdownMenuItem>
+  </GlassDropdownMenuContent>
+</GlassDropdownMenu>
+```
+
+## Props — GlassDropdownMenu
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Initial open state (uncontrolled) |
+| `onOpenChange` | `(open: boolean) => void` | — | Callback on open state change |
+| `modal` | `boolean` | `true` | Whether the menu is modal |
+
+## Props — GlassDropdownMenuContent
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `sideOffset` | `number` | `4` | Offset from the trigger in pixels |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment to the trigger |
+
+## Props — GlassDropdownMenuItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `disabled` | `boolean` | `false` | Disables this item |
+| `onSelect` | `(event: Event) => void` | — | Callback when the item is selected |
+
+All Radix `DropdownMenu.*` props are also accepted.

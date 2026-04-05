@@ -1,0 +1,46 @@
+---
+title: GlassButton
+description: A glassmorphism-styled button with variant and size options.
+---
+
+## Usage
+
+```tsx
+import { GlassButton } from "koori-ui";
+
+<GlassButton>Click me</GlassButton>
+<GlassButton variant="primary">Primary</GlassButton>
+<GlassButton variant="primary" size="lg">Large Primary</GlassButton>
+```
+
+## Variants
+
+```tsx
+<GlassButton variant="default">Default</GlassButton>
+<GlassButton variant="primary">Primary</GlassButton>
+```
+
+## Sizes
+
+```tsx
+<GlassButton size="sm">Small</GlassButton>
+<GlassButton size="md">Medium</GlassButton>
+<GlassButton size="lg">Large</GlassButton>
+```
+
+## Disabled
+
+```tsx
+<GlassButton disabled>Disabled</GlassButton>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "primary"` | `"default"` | Visual style |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"` | Button size |
+| `disabled` | `boolean` | `false` | Disable the button |
+| `type` | `string` | `"button"` | HTML button type |
+
+All native `<button>` props are also accepted.

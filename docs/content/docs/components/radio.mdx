@@ -1,0 +1,54 @@
+---
+title: GlassRadioGroup
+description: A glassmorphism-styled radio group powered by Radix UI, composed of a Root and Item.
+---
+
+## Usage
+
+```tsx
+import { GlassRadioGroup, GlassRadioItem } from "koori-ui";
+
+<GlassRadioGroup defaultValue="option-a">
+  <GlassRadioItem id="a" value="option-a" label="Option A" />
+  <GlassRadioItem id="b" value="option-b" label="Option B" />
+  <GlassRadioItem id="c" value="option-c" label="Option C" />
+</GlassRadioGroup>
+```
+
+## Controlled
+
+```tsx
+import { useState } from "react";
+import { GlassRadioGroup, GlassRadioItem } from "koori-ui";
+
+function Example() {
+  const [value, setValue] = useState("light");
+  return (
+    <GlassRadioGroup value={value} onValueChange={setValue}>
+      <GlassRadioItem id="light" value="light" label="Light" />
+      <GlassRadioItem id="dark" value="dark" label="Dark" />
+      <GlassRadioItem id="system" value="system" label="System" />
+    </GlassRadioGroup>
+  );
+}
+```
+
+## Props — GlassRadioGroup
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Controlled selected value |
+| `defaultValue` | `string` | — | Initial value (uncontrolled) |
+| `onValueChange` | `(value: string) => void` | — | Callback when selection changes |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Layout direction |
+
+All Radix `RadioGroup.Root` props are also accepted.
+
+## Props — GlassRadioItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Value associated with this item (required) |
+| `label` | `string` | — | Optional label rendered beside the radio button |
+| `id` | `string` | — | HTML id, links the label for accessibility |
+| `disabled` | `boolean` | `false` | Disables this item |

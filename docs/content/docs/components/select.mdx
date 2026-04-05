@@ -1,0 +1,76 @@
+---
+title: GlassSelect
+description: A glassmorphism-styled select dropdown powered by Radix UI, composed of multiple sub-components.
+---
+
+## Usage
+
+```tsx
+import {
+  GlassSelect,
+  GlassSelectTrigger,
+  GlassSelectValue,
+  GlassSelectContent,
+  GlassSelectItem,
+} from "koori-ui";
+
+<GlassSelect>
+  <GlassSelectTrigger>
+    <GlassSelectValue placeholder="Select a framework..." />
+  </GlassSelectTrigger>
+  <GlassSelectContent>
+    <GlassSelectItem value="react">React</GlassSelectItem>
+    <GlassSelectItem value="vue">Vue</GlassSelectItem>
+    <GlassSelectItem value="svelte">Svelte</GlassSelectItem>
+  </GlassSelectContent>
+</GlassSelect>
+```
+
+## With Groups and Labels
+
+```tsx
+import {
+  GlassSelect, GlassSelectTrigger, GlassSelectValue,
+  GlassSelectContent, GlassSelectGroup, GlassSelectLabel, GlassSelectItem,
+} from "koori-ui";
+
+<GlassSelect>
+  <GlassSelectTrigger>
+    <GlassSelectValue placeholder="Pick one..." />
+  </GlassSelectTrigger>
+  <GlassSelectContent>
+    <GlassSelectGroup>
+      <GlassSelectLabel>Frontend</GlassSelectLabel>
+      <GlassSelectItem value="react">React</GlassSelectItem>
+      <GlassSelectItem value="vue">Vue</GlassSelectItem>
+    </GlassSelectGroup>
+    <GlassSelectGroup>
+      <GlassSelectLabel>Backend</GlassSelectLabel>
+      <GlassSelectItem value="node">Node.js</GlassSelectItem>
+      <GlassSelectItem value="go">Go</GlassSelectItem>
+    </GlassSelectGroup>
+  </GlassSelectContent>
+</GlassSelect>
+```
+
+## Props — GlassSelect
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Controlled selected value |
+| `defaultValue` | `string` | — | Initial value (uncontrolled) |
+| `onValueChange` | `(value: string) => void` | — | Callback on selection change |
+| `disabled` | `boolean` | `false` | Disables the select |
+
+## Props — GlassSelectContent
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `position` | `"popper" \| "item-aligned"` | `"popper"` | Positioning strategy |
+
+## Props — GlassSelectItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | The value of this option (required) |
+| `disabled` | `boolean` | `false` | Disables this item |

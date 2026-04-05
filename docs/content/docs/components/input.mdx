@@ -1,0 +1,49 @@
+---
+title: GlassInput
+description: A glassmorphism-styled input that extends the native HTML input element.
+---
+
+## Usage
+
+```tsx
+import { GlassInput } from "koori-ui";
+
+<GlassInput placeholder="Enter text..." />
+<GlassInput type="email" placeholder="you@example.com" />
+<GlassInput type="password" placeholder="Password" />
+```
+
+## Controlled
+
+```tsx
+import { useState } from "react";
+import { GlassInput } from "koori-ui";
+
+function Example() {
+  const [value, setValue] = useState("");
+  return (
+    <GlassInput
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      placeholder="Type here..."
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+<GlassInput disabled placeholder="Disabled input" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `type` | `string` | `"text"` | Native input type |
+| `placeholder` | `string` | — | Placeholder text |
+| `disabled` | `boolean` | `false` | Disables the input |
+| `className` | `string` | — | Additional CSS classes |
+
+All native `<input>` props are also accepted.

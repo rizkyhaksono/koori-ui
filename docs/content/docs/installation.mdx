@@ -1,0 +1,41 @@
+---
+title: Installation
+description: Install Koori UI in your React project.
+---
+
+## Install the package
+
+```bash
+npm install koori-ui
+```
+
+## Import the styles
+
+Import the CSS once in your root layout or entry file:
+
+```tsx
+// Next.js app/layout.tsx
+import "koori-ui/styles.css";
+```
+
+## Start using components
+
+```tsx
+import { GlassButton, GlassCard, GlassCardBody } from "koori-ui";
+
+export default function App() {
+  return (
+    <GlassCard>
+      <GlassCardBody>
+        <GlassButton variant="primary">Get Started</GlassButton>
+      </GlassCardBody>
+    </GlassCard>
+  );
+}
+```
+
+## Requirements
+
+- **React** ≥ 19
+- **Next.js** ≥ 14 (or any bundler that supports ESM)
+- No Tailwind CSS setup required in your app — styles are pre-compiled

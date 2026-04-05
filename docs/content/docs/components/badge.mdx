@@ -1,0 +1,44 @@
+---
+title: GlassBadge
+description: A glassmorphism-styled badge for statuses, labels, and categories.
+---
+
+## Usage
+
+```tsx
+import { GlassBadge } from "koori-ui";
+
+<GlassBadge>Default</GlassBadge>
+<GlassBadge variant="primary">Primary</GlassBadge>
+```
+
+## Variants
+
+```tsx
+<GlassBadge variant="default">Default</GlassBadge>
+<GlassBadge variant="primary">Primary</GlassBadge>
+<GlassBadge variant="success">Success</GlassBadge>
+<GlassBadge variant="warning">Warning</GlassBadge>
+<GlassBadge variant="danger">Danger</GlassBadge>
+```
+
+## In Context
+
+```tsx
+import { GlassBadge, GlassText } from "koori-ui";
+
+<div className="flex items-center gap-2">
+  <GlassText>Deployment status</GlassText>
+  <GlassBadge variant="success">Live</GlassBadge>
+</div>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "primary" \| "success" \| "warning" \| "danger"` | `"default"` | Visual style |
+| `className` | `string` | — | Additional CSS classes |
+| `children` | `ReactNode` | — | Badge label content |
+
+All native `<div>` props are also accepted.

@@ -1,0 +1,58 @@
+---
+title: GlassSlider
+description: A glassmorphism-styled range slider powered by Radix UI.
+---
+
+## Usage
+
+```tsx
+import { GlassSlider } from "koori-ui";
+
+<GlassSlider defaultValue={[50]} max={100} step={1} />
+```
+
+## Controlled
+
+```tsx
+import { useState } from "react";
+import { GlassSlider } from "koori-ui";
+
+function Example() {
+  const [value, setValue] = useState([40]);
+  return (
+    <GlassSlider
+      value={value}
+      onValueChange={setValue}
+      max={100}
+      step={5}
+    />
+  );
+}
+```
+
+## Range (Two Thumbs)
+
+```tsx
+<GlassSlider defaultValue={[20, 80]} max={100} step={1} />
+```
+
+## Disabled
+
+```tsx
+<GlassSlider defaultValue={[30]} disabled />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `number[]` | — | Controlled value(s) |
+| `defaultValue` | `number[]` | — | Initial value(s) (uncontrolled) |
+| `onValueChange` | `(value: number[]) => void` | — | Callback on change |
+| `min` | `number` | `0` | Minimum value |
+| `max` | `number` | `100` | Maximum value |
+| `step` | `number` | `1` | Step increment |
+| `disabled` | `boolean` | `false` | Disables the slider |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Slider orientation |
+
+All Radix `Slider.Root` props are also accepted.

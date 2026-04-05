@@ -1,0 +1,20 @@
+import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import type { ReactNode } from "react";
+import { source } from "@/app/source";
+
+export default function Layout({ children }: { children: ReactNode }) {
+  return (
+    <DocsLayout
+      tree={source.pageTree}
+      nav={{
+        title: "Koori UI",
+        url: "/docs/introduction",
+      }}
+      sidebar={{
+        collapsible: false,
+      }}
+    >
+      {children}
+    </DocsLayout>
+  );
+}

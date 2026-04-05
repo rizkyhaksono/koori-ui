@@ -1,0 +1,56 @@
+---
+title: GlassCheckbox
+description: A glassmorphism-styled checkbox powered by Radix UI with optional label support.
+---
+
+## Usage
+
+```tsx
+import { GlassCheckbox } from "koori-ui";
+
+<GlassCheckbox id="terms" label="I accept the terms and conditions" />
+```
+
+## Without Label
+
+```tsx
+<GlassCheckbox id="standalone" />
+```
+
+## Controlled
+
+```tsx
+import { useState } from "react";
+import { GlassCheckbox } from "koori-ui";
+
+function Example() {
+  const [checked, setChecked] = useState(false);
+  return (
+    <GlassCheckbox
+      id="controlled"
+      checked={checked}
+      onCheckedChange={(val) => setChecked(val === true)}
+      label="Enable notifications"
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+<GlassCheckbox id="disabled" disabled label="Disabled option" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `label` | `string` | — | Optional label rendered next to the checkbox |
+| `id` | `string` | — | HTML id, links the label for accessibility |
+| `checked` | `boolean \| "indeterminate"` | — | Controlled checked state |
+| `defaultChecked` | `boolean` | — | Initial checked state (uncontrolled) |
+| `onCheckedChange` | `(checked: boolean \| "indeterminate") => void` | — | Callback when state changes |
+| `disabled` | `boolean` | `false` | Disables the checkbox |
+
+All Radix `Checkbox.Root` props are also accepted.

@@ -1,0 +1,32 @@
+{
+  "title": "Components",
+  "pages": [
+    "button",
+    "input",
+    "textarea",
+    "checkbox",
+    "switch",
+    "radio",
+    "select",
+    "slider",
+    "alert",
+    "badge",
+    "tooltip",
+    "popover",
+    "dropdown-menu",
+    "dialog",
+    "toast",
+    "card",
+    "panel",
+    "table",
+    "stat-card",
+    "avatar",
+    "tabs",
+    "progress",
+    "skeleton",
+    "breadcrumb",
+    "separator",
+    "typography",
+    "chart"
+  ]
+}

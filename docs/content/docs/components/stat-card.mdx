@@ -1,0 +1,54 @@
+---
+title: GlassStatCard
+description: A glassmorphism-styled metric card displaying a label, value, optional trend, and optional icon.
+---
+
+## Usage
+
+```tsx
+import { GlassStatCard } from "koori-ui";
+
+<GlassStatCard label="Total Revenue" value="$48,295" />
+```
+
+## With Trend
+
+```tsx
+<GlassStatCard label="Monthly Users" value="12,400" trend={8.3} />
+<GlassStatCard label="Churn Rate" value="2.1%" trend={-1.4} />
+```
+
+## With Icon
+
+```tsx
+import { Users } from "lucide-react";
+import { GlassStatCard } from "koori-ui";
+
+<GlassStatCard
+  label="Active Users"
+  value="3,842"
+  trend={5.2}
+  icon={<Users className="h-5 w-5" />}
+/>
+```
+
+## Variants
+
+```tsx
+<GlassStatCard label="Revenue" value="$12k" variant="default" />
+<GlassStatCard label="Revenue" value="$12k" variant="subtle" />
+<GlassStatCard label="Revenue" value="$12k" variant="elevated" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `label` | `string` | — | Metric label (required) |
+| `value` | `string \| number` | — | Metric value (required) |
+| `trend` | `number` | — | Percentage change; positive = up, negative = down |
+| `icon` | `ReactNode` | — | Icon displayed in the top-right corner |
+| `variant` | `"default" \| "subtle" \| "elevated"` | `"default"` | Glass intensity level |
+| `className` | `string` | — | Additional CSS classes |
+
+All native `<div>` props are also accepted.

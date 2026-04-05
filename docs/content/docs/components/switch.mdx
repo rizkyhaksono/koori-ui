@@ -1,0 +1,56 @@
+---
+title: GlassSwitch
+description: A glassmorphism-styled toggle switch powered by Radix UI with optional label support.
+---
+
+## Usage
+
+```tsx
+import { GlassSwitch } from "koori-ui";
+
+<GlassSwitch id="notifications" label="Enable notifications" />
+```
+
+## Without Label
+
+```tsx
+<GlassSwitch id="toggle" />
+```
+
+## Controlled
+
+```tsx
+import { useState } from "react";
+import { GlassSwitch } from "koori-ui";
+
+function Example() {
+  const [enabled, setEnabled] = useState(false);
+  return (
+    <GlassSwitch
+      id="dark-mode"
+      checked={enabled}
+      onCheckedChange={setEnabled}
+      label="Dark mode"
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+<GlassSwitch id="disabled" disabled label="Unavailable option" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `label` | `string` | — | Optional label rendered beside the switch |
+| `id` | `string` | — | HTML id, links the label for accessibility |
+| `checked` | `boolean` | — | Controlled checked state |
+| `defaultChecked` | `boolean` | — | Initial state (uncontrolled) |
+| `onCheckedChange` | `(checked: boolean) => void` | — | Callback when state changes |
+| `disabled` | `boolean` | `false` | Disables the switch |
+
+All Radix `Switch.Root` props are also accepted.

@@ -1,0 +1,48 @@
+---
+title: GlassTextarea
+description: A glassmorphism-styled textarea that extends the native HTML textarea element.
+---
+
+## Usage
+
+```tsx
+import { GlassTextarea } from "koori-ui";
+
+<GlassTextarea placeholder="Write something..." />
+<GlassTextarea rows={6} placeholder="Longer input area" />
+```
+
+## Controlled
+
+```tsx
+import { useState } from "react";
+import { GlassTextarea } from "koori-ui";
+
+function Example() {
+  const [value, setValue] = useState("");
+  return (
+    <GlassTextarea
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      placeholder="Your message..."
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+<GlassTextarea disabled placeholder="Disabled textarea" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `rows` | `number` | `3` | Minimum number of visible rows |
+| `placeholder` | `string` | — | Placeholder text |
+| `disabled` | `boolean` | `false` | Disables the textarea |
+| `className` | `string` | — | Additional CSS classes |
+
+All native `<textarea>` props are also accepted.

@@ -1,0 +1,49 @@
+---
+title: GlassCard
+description: A glassmorphism-styled card component with optional header, body, and footer sections.
+---
+
+## Usage
+
+```tsx
+import { GlassCard } from "koori-ui";
+
+<GlassCard>
+  <p>Simple card content.</p>
+</GlassCard>
+```
+
+## With Header, Body, and Footer
+
+```tsx
+import { GlassCard, GlassCardHeader, GlassCardBody, GlassCardFooter, GlassButton } from "koori-ui";
+
+<GlassCard>
+  <GlassCardHeader>
+    <h3 className="font-semibold">Card Title</h3>
+  </GlassCardHeader>
+  <GlassCardBody>
+    <p className="text-sm">Card body content goes here.</p>
+  </GlassCardBody>
+  <GlassCardFooter>
+    <GlassButton variant="primary" size="sm">Action</GlassButton>
+  </GlassCardFooter>
+</GlassCard>
+```
+
+## Variants
+
+```tsx
+<GlassCard variant="default">Default glass surface</GlassCard>
+<GlassCard variant="subtle">Subtle glass surface</GlassCard>
+<GlassCard variant="elevated">Elevated glass surface</GlassCard>
+```
+
+## Props — GlassCard
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "subtle" \| "elevated"` | `"default"` | Glass intensity level |
+| `className` | `string` | — | Additional CSS classes |
+
+All native `<div>` props are also accepted. `GlassCardHeader`, `GlassCardBody`, and `GlassCardFooter` accept all native `<div>` props.

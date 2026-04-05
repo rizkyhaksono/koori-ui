@@ -1,0 +1,61 @@
+---
+title: GlassPopover
+description: A glassmorphism-styled popover powered by Radix UI with optional close button.
+---
+
+## Usage
+
+```tsx
+import {
+  GlassPopover,
+  GlassPopoverTrigger,
+  GlassPopoverContent,
+  GlassButton,
+} from "koori-ui";
+
+<GlassPopover>
+  <GlassPopoverTrigger asChild>
+    <GlassButton>Open popover</GlassButton>
+  </GlassPopoverTrigger>
+  <GlassPopoverContent>
+    <p className="text-sm">This is the popover content.</p>
+  </GlassPopoverContent>
+</GlassPopover>
+```
+
+## With Close Button
+
+```tsx
+import {
+  GlassPopover, GlassPopoverTrigger, GlassPopoverContent, GlassPopoverClose,
+  GlassButton,
+} from "koori-ui";
+
+<GlassPopover>
+  <GlassPopoverTrigger asChild>
+    <GlassButton>Settings</GlassButton>
+  </GlassPopoverTrigger>
+  <GlassPopoverContent>
+    <GlassPopoverClose />
+    <p className="text-sm">Adjust your settings here.</p>
+  </GlassPopoverContent>
+</GlassPopover>
+```
+
+## Props — GlassPopover
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Initial open state (uncontrolled) |
+| `onOpenChange` | `(open: boolean) => void` | — | Callback on open state change |
+
+## Props — GlassPopoverContent
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment to the trigger |
+| `sideOffset` | `number` | `4` | Offset in pixels from the trigger |
+| `side` | `"top" \| "right" \| "bottom" \| "left"` | `"bottom"` | Preferred side to render |
+
+All Radix `Popover.Root` and `Popover.Content` props are also accepted.

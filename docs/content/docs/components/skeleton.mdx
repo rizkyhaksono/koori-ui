@@ -1,0 +1,45 @@
+---
+title: GlassSkeleton
+description: A glassmorphism-styled animated skeleton placeholder for loading states.
+---
+
+## Usage
+
+```tsx
+import { GlassSkeleton } from "koori-ui";
+
+<GlassSkeleton width={200} height={20} />
+```
+
+## Text Lines
+
+```tsx
+<div className="flex flex-col gap-2">
+  <GlassSkeleton width="100%" height={16} />
+  <GlassSkeleton width="80%" height={16} />
+  <GlassSkeleton width="60%" height={16} />
+</div>
+```
+
+## Card Placeholder
+
+```tsx
+import { GlassSkeleton, GlassPanel } from "koori-ui";
+
+<GlassPanel>
+  <GlassSkeleton className="mb-4 rounded-full" width={48} height={48} />
+  <GlassSkeleton className="mb-2" width="70%" height={20} />
+  <GlassSkeleton width="100%" height={14} />
+  <GlassSkeleton className="mt-1" width="90%" height={14} />
+</GlassPanel>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `width` | `string \| number` | — | CSS width value or pixel number |
+| `height` | `string \| number` | — | CSS height value or pixel number |
+| `className` | `string` | — | Additional CSS classes (e.g. `rounded-full`) |
+
+All native `<div>` props are also accepted.

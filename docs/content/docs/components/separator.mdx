@@ -1,0 +1,44 @@
+---
+title: GlassSeparator
+description: A glassmorphism-styled divider line powered by Radix UI, supporting horizontal and vertical orientations.
+---
+
+## Usage
+
+```tsx
+import { GlassSeparator } from "koori-ui";
+
+<GlassSeparator />
+```
+
+## Vertical
+
+```tsx
+<div className="flex h-8 items-center gap-4">
+  <span>Item A</span>
+  <GlassSeparator orientation="vertical" className="h-full" />
+  <span>Item B</span>
+</div>
+```
+
+## In a Card
+
+```tsx
+import { GlassCard, GlassSeparator, GlassText } from "koori-ui";
+
+<GlassCard>
+  <GlassText>Section one</GlassText>
+  <GlassSeparator className="my-4" />
+  <GlassText>Section two</GlassText>
+</GlassCard>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Line direction |
+| `decorative` | `boolean` | `true` | When `true`, hides from the accessibility tree |
+| `className` | `string` | — | Additional CSS classes |
+
+All Radix `Separator.Root` props are also accepted.

@@ -1,0 +1,54 @@
+---
+title: GlassTable
+description: A glassmorphism-styled HTML table with scrollable wrapper and glass-subtle surface.
+---
+
+## Usage
+
+```tsx
+import {
+  GlassTable,
+  GlassThead,
+  GlassTbody,
+  GlassTr,
+  GlassTh,
+  GlassTd,
+} from "koori-ui";
+
+<GlassTable>
+  <GlassThead>
+    <GlassTr>
+      <GlassTh>Name</GlassTh>
+      <GlassTh>Role</GlassTh>
+      <GlassTh>Status</GlassTh>
+    </GlassTr>
+  </GlassThead>
+  <GlassTbody>
+    <GlassTr>
+      <GlassTd>Alice</GlassTd>
+      <GlassTd>Engineer</GlassTd>
+      <GlassTd>Active</GlassTd>
+    </GlassTr>
+    <GlassTr>
+      <GlassTd>Bob</GlassTd>
+      <GlassTd>Designer</GlassTd>
+      <GlassTd>Inactive</GlassTd>
+    </GlassTr>
+  </GlassTbody>
+</GlassTable>
+```
+
+## Props
+
+`GlassTable` wraps a `<table>` inside a horizontally scrollable `glass-subtle` container.
+
+| Component | Element | Description |
+| --- | --- | --- |
+| `GlassTable` | `<table>` | Root table with overflow scroll wrapper |
+| `GlassThead` | `<thead>` | Table header section with bottom border |
+| `GlassTbody` | `<tbody>` | Table body with row dividers |
+| `GlassTr` | `<tr>` | Table row with hover background |
+| `GlassTh` | `<th>` | Header cell, uppercase, muted text |
+| `GlassTd` | `<td>` | Data cell with normal text color |
+
+All components accept their corresponding native HTML element props plus `className`.

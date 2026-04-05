@@ -1,0 +1,70 @@
+---
+title: GlassToast
+description: A glassmorphism-styled toast notification system powered by Radix UI.
+---
+
+## Setup
+
+Place `GlassToastProvider` and `GlassToaster` near the root of your app.
+
+```tsx
+import {
+  GlassToastProvider,
+  GlassToaster,
+} from "koori-ui";
+
+export default function App({ children }) {
+  return (
+    <GlassToastProvider>
+      {children}
+      <GlassToaster />
+    </GlassToastProvider>
+  );
+}
+```
+
+## Usage
+
+```tsx
+import {
+  GlassToast,
+  GlassToastTitle,
+  GlassToastDescription,
+  GlassToastClose,
+} from "koori-ui";
+
+<GlassToast variant="success">
+  <div className="flex-1">
+    <GlassToastTitle>Saved</GlassToastTitle>
+    <GlassToastDescription>Your changes have been saved.</GlassToastDescription>
+  </div>
+  <GlassToastClose />
+</GlassToast>
+```
+
+## Variants
+
+```tsx
+<GlassToast variant="default">...</GlassToast>
+<GlassToast variant="success">...</GlassToast>
+<GlassToast variant="warning">...</GlassToast>
+<GlassToast variant="error">...</GlassToast>
+```
+
+## Props — GlassToast
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "success" \| "warning" \| "error"` | `"default"` | Visual style |
+| `duration` | `number` | `5000` | Auto-dismiss duration in ms |
+| `open` | `boolean` | — | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Callback on open state change |
+
+## Props — GlassToastProvider
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `duration` | `number` | `5000` | Default duration for all toasts |
+| `swipeDirection` | `"right" \| "left" \| "up" \| "down"` | `"right"` | Swipe-to-dismiss direction |
+
+All Radix `Toast.*` props are also accepted.

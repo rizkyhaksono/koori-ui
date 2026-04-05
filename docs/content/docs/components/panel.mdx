@@ -1,0 +1,44 @@
+---
+title: GlassPanel
+description: A glassmorphism-styled layout container for wrapping content in a frosted-glass surface.
+---
+
+## Usage
+
+```tsx
+import { GlassPanel } from "koori-ui";
+
+<GlassPanel>
+  <p>Frosted glass container.</p>
+</GlassPanel>
+```
+
+## Variants
+
+```tsx
+<GlassPanel variant="default">Default surface</GlassPanel>
+<GlassPanel variant="subtle">Subtle surface</GlassPanel>
+<GlassPanel variant="elevated">Elevated surface</GlassPanel>
+```
+
+## As a Layout Section
+
+```tsx
+import { GlassPanel, GlassH3, GlassText } from "koori-ui";
+
+<GlassPanel variant="elevated" className="max-w-md">
+  <GlassH3>Welcome back</GlassH3>
+  <GlassText muted className="mt-2">
+    Here is an overview of your recent activity.
+  </GlassText>
+</GlassPanel>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "subtle" \| "elevated"` | `"default"` | Glass intensity level |
+| `className` | `string` | — | Additional CSS classes |
+
+All native `<div>` props are also accepted.

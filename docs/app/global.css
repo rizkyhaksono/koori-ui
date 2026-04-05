@@ -1,0 +1,6 @@
+@import "fumadocs-ui/style.css";
+
+:root {
+  --fd-primary: var(--koori-primary, #3b82f6);
+  --fd-secondary: var(--koori-accent, #06b6d4);
+}

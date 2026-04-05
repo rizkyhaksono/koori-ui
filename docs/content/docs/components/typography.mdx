@@ -1,0 +1,60 @@
+---
+title: Typography
+description: Glassmorphism-styled typographic primitives including headings, body text, code, links, and blockquotes.
+---
+
+## Headings
+
+```tsx
+import { GlassH1, GlassH2, GlassH3, GlassH4 } from "koori-ui";
+
+<GlassH1>Page Title</GlassH1>
+<GlassH2>Section Heading</GlassH2>
+<GlassH3>Sub-section</GlassH3>
+<GlassH4>Minor Heading</GlassH4>
+```
+
+## Body Text
+
+```tsx
+import { GlassText } from "koori-ui";
+
+<GlassText>Regular paragraph text.</GlassText>
+<GlassText size="sm" muted>Small muted caption.</GlassText>
+<GlassText size="lg">Large body copy.</GlassText>
+```
+
+## Code
+
+```tsx
+import { GlassCode } from "koori-ui";
+
+<p>Run <GlassCode>npm install koori-ui</GlassCode> to get started.</p>
+```
+
+## Links
+
+```tsx
+import { GlassLink } from "koori-ui";
+
+<GlassLink href="https://example.com">Visit the docs</GlassLink>
+```
+
+## Blockquote
+
+```tsx
+import { GlassBlockquote } from "koori-ui";
+
+<GlassBlockquote>
+  Design is not just what it looks like. Design is how it works.
+</GlassBlockquote>
+```
+
+## Props — GlassText
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"` | Font size preset |
+| `muted` | `boolean` | `false` | Use muted color token |
+
+All components accept their corresponding native HTML element props and `className`. `GlassH1`–`GlassH4` extend `<h1>`–`<h4>`, `GlassText` extends `<p>`, `GlassCode` extends `<code>`, `GlassLink` extends `<a>`, `GlassBlockquote` extends `<blockquote>`.

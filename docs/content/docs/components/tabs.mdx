@@ -1,0 +1,78 @@
+---
+title: GlassTabs
+description: A glassmorphism-styled tabs component powered by Radix UI.
+---
+
+## Usage
+
+```tsx
+import {
+  GlassTabs,
+  GlassTabsList,
+  GlassTabsTrigger,
+  GlassTabsContent,
+} from "koori-ui";
+
+<GlassTabs defaultValue="overview">
+  <GlassTabsList>
+    <GlassTabsTrigger value="overview">Overview</GlassTabsTrigger>
+    <GlassTabsTrigger value="analytics">Analytics</GlassTabsTrigger>
+    <GlassTabsTrigger value="settings">Settings</GlassTabsTrigger>
+  </GlassTabsList>
+
+  <GlassTabsContent value="overview">
+    <p>Overview content here.</p>
+  </GlassTabsContent>
+  <GlassTabsContent value="analytics">
+    <p>Analytics content here.</p>
+  </GlassTabsContent>
+  <GlassTabsContent value="settings">
+    <p>Settings content here.</p>
+  </GlassTabsContent>
+</GlassTabs>
+```
+
+## Controlled
+
+```tsx
+import { useState } from "react";
+import { GlassTabs, GlassTabsList, GlassTabsTrigger, GlassTabsContent } from "koori-ui";
+
+function Example() {
+  const [tab, setTab] = useState("overview");
+  return (
+    <GlassTabs value={tab} onValueChange={setTab}>
+      <GlassTabsList>
+        <GlassTabsTrigger value="overview">Overview</GlassTabsTrigger>
+        <GlassTabsTrigger value="details">Details</GlassTabsTrigger>
+      </GlassTabsList>
+      <GlassTabsContent value="overview">Overview</GlassTabsContent>
+      <GlassTabsContent value="details">Details</GlassTabsContent>
+    </GlassTabs>
+  );
+}
+```
+
+## Props — GlassTabs
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Controlled active tab |
+| `defaultValue` | `string` | — | Initial active tab (uncontrolled) |
+| `onValueChange` | `(value: string) => void` | — | Callback when tab changes |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction |
+
+## Props — GlassTabsTrigger
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Tab identifier (required) |
+| `disabled` | `boolean` | `false` | Disables this tab |
+
+## Props — GlassTabsContent
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Matching tab identifier (required) |
+
+All Radix `Tabs.*` props are also accepted.

@@ -1,0 +1,51 @@
+---
+title: GlassBreadcrumb
+description: A glassmorphism-styled breadcrumb navigation with customizable separators.
+---
+
+## Usage
+
+```tsx
+import {
+  GlassBreadcrumb,
+  GlassBreadcrumbItem,
+  GlassBreadcrumbSeparator,
+} from "koori-ui";
+
+<GlassBreadcrumb>
+  <GlassBreadcrumbItem href="/">Home</GlassBreadcrumbItem>
+  <GlassBreadcrumbSeparator />
+  <GlassBreadcrumbItem href="/docs">Docs</GlassBreadcrumbItem>
+  <GlassBreadcrumbSeparator />
+  <GlassBreadcrumbItem isCurrent>Components</GlassBreadcrumbItem>
+</GlassBreadcrumb>
+```
+
+## Custom Separator Icon
+
+```tsx
+import { Slash } from "lucide-react";
+import { GlassBreadcrumb, GlassBreadcrumbItem, GlassBreadcrumbSeparator } from "koori-ui";
+
+<GlassBreadcrumb>
+  <GlassBreadcrumbItem href="/">Home</GlassBreadcrumbItem>
+  <GlassBreadcrumbSeparator icon={<Slash className="h-3.5 w-3.5" />} />
+  <GlassBreadcrumbItem isCurrent>Page</GlassBreadcrumbItem>
+</GlassBreadcrumb>
+```
+
+## Props — GlassBreadcrumbItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `href` | `string` | — | Link destination; renders an `<a>` tag when provided |
+| `isCurrent` | `boolean` | `false` | Marks this as the current page (`aria-current="page"`) |
+| `children` | `ReactNode` | — | Label content |
+
+## Props — GlassBreadcrumbSeparator
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `icon` | `ReactNode` | `<ChevronRight />` | Custom separator icon |
+
+All components accept native `<li>` props and `className`.

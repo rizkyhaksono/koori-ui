@@ -1,0 +1,48 @@
+---
+title: GlassProgress
+description: A glassmorphism-styled progress bar powered by Radix UI with color variants.
+---
+
+## Usage
+
+```tsx
+import { GlassProgress } from "koori-ui";
+
+<GlassProgress value={60} />
+```
+
+## Variants
+
+```tsx
+<GlassProgress value={75} variant="default" />
+<GlassProgress value={90} variant="success" />
+<GlassProgress value={50} variant="warning" />
+<GlassProgress value={30} variant="error" />
+```
+
+## Animated Example
+
+```tsx
+import { useState, useEffect } from "react";
+import { GlassProgress } from "koori-ui";
+
+function Example() {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    const timer = setTimeout(() => setValue(72), 500);
+    return () => clearTimeout(timer);
+  }, []);
+  return <GlassProgress value={value} variant="success" />;
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `number` | `0` | Current progress value (0–100) |
+| `variant` | `"default" \| "success" \| "warning" \| "error"` | `"default"` | Color variant |
+| `max` | `number` | `100` | Maximum value |
+| `className` | `string` | — | Additional CSS classes |
+
+All Radix `Progress.Root` props are also accepted.

@@ -1,0 +1,10 @@
+{
+  "title": "Koori UI",
+  "pages": [
+    "introduction",
+    "installation",
+    "theming",
+    "---",
+    "components"
+  ]
+}

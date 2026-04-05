@@ -1,0 +1,53 @@
+---
+title: GlassTooltip
+description: A glassmorphism-styled tooltip powered by Radix UI, composed of Provider, Tooltip, Trigger, and Content.
+---
+
+## Usage
+
+Wrap your app (or page) with `GlassTooltipProvider` once, then use `GlassTooltip` around any trigger.
+
+```tsx
+import {
+  GlassTooltipProvider,
+  GlassTooltip,
+  GlassTooltipTrigger,
+  GlassTooltipContent,
+  GlassButton,
+} from "koori-ui";
+
+<GlassTooltipProvider>
+  <GlassTooltip>
+    <GlassTooltipTrigger asChild>
+      <GlassButton>Hover me</GlassButton>
+    </GlassTooltipTrigger>
+    <GlassTooltipContent>
+      Helpful information
+    </GlassTooltipContent>
+  </GlassTooltip>
+</GlassTooltipProvider>
+```
+
+## Side Placement
+
+```tsx
+<GlassTooltipContent side="right">Right side tooltip</GlassTooltipContent>
+<GlassTooltipContent side="bottom">Bottom tooltip</GlassTooltipContent>
+```
+
+## Props — GlassTooltipProvider
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `delayDuration` | `number` | `700` | Milliseconds before the tooltip opens |
+| `skipDelayDuration` | `number` | `300` | Delay when moving between tooltips |
+
+## Props — GlassTooltipContent
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"top" \| "right" \| "bottom" \| "left"` | `"top"` | Preferred side to render |
+| `sideOffset` | `number` | `4` | Offset in pixels from the trigger |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+
+All Radix `Tooltip.Root` and `Tooltip.Content` props are also accepted.

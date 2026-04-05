@@ -1,0 +1,56 @@
+---
+title: GlassAlert
+description: A glassmorphism-styled alert banner with info, success, warning, and error variants.
+---
+
+## Usage
+
+```tsx
+import { GlassAlert } from "koori-ui";
+
+<GlassAlert variant="info" title="Heads up">
+  This action cannot be undone.
+</GlassAlert>
+```
+
+## Variants
+
+```tsx
+<GlassAlert variant="info" title="Info">Something to note.</GlassAlert>
+<GlassAlert variant="success" title="Success">Operation completed.</GlassAlert>
+<GlassAlert variant="warning" title="Warning">Proceed with caution.</GlassAlert>
+<GlassAlert variant="error" title="Error">Something went wrong.</GlassAlert>
+```
+
+## With Icon
+
+```tsx
+import { Info } from "lucide-react";
+import { GlassAlert } from "koori-ui";
+
+<GlassAlert
+  variant="info"
+  title="New release"
+  icon={<Info className="h-4 w-4" />}
+>
+  Version 2.0 is now available.
+</GlassAlert>
+```
+
+## Without Title
+
+```tsx
+<GlassAlert variant="success">Your changes have been saved.</GlassAlert>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"info" \| "success" \| "warning" \| "error"` | `"info"` | Visual variant |
+| `title` | `string` | — | Optional bold title above the content |
+| `icon` | `ReactNode` | — | Optional icon rendered to the left |
+| `children` | `ReactNode` | — | Alert body content |
+| `className` | `string` | — | Additional CSS classes |
+
+All native `<div>` props are also accepted.

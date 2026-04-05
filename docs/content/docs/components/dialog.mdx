@@ -1,0 +1,61 @@
+---
+title: GlassDialog
+description: A glassmorphism-styled accessible dialog/modal powered by Radix UI.
+---
+
+## Usage
+
+```tsx
+import {
+  GlassDialog,
+  GlassDialogTrigger,
+  GlassDialogContent,
+  GlassDialogTitle,
+  GlassDialogDescription,
+  GlassDialogClose,
+  GlassButton,
+} from "koori-ui";
+
+<GlassDialog>
+  <GlassDialogTrigger asChild>
+    <GlassButton>Open dialog</GlassButton>
+  </GlassDialogTrigger>
+  <GlassDialogContent>
+    <GlassDialogTitle>Confirm action</GlassDialogTitle>
+    <GlassDialogDescription>
+      This will permanently delete the item. Are you sure?
+    </GlassDialogDescription>
+    <div className="mt-4 flex justify-end gap-2">
+      <GlassDialogClose asChild>
+        <GlassButton>Cancel</GlassButton>
+      </GlassDialogClose>
+      <GlassButton variant="primary">Confirm</GlassButton>
+    </div>
+  </GlassDialogContent>
+</GlassDialog>
+```
+
+## Without Overlay
+
+```tsx
+<GlassDialogContent hideOverlay>
+  <GlassDialogTitle>Floating panel</GlassDialogTitle>
+</GlassDialogContent>
+```
+
+## Props — GlassDialog
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Initial open state (uncontrolled) |
+| `onOpenChange` | `(open: boolean) => void` | — | Callback on open state change |
+| `modal` | `boolean` | `true` | Whether the dialog is modal |
+
+## Props — GlassDialogContent
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `hideOverlay` | `boolean` | `false` | Hide the default backdrop overlay |
+
+All Radix `Dialog.Root` and `Dialog.Content` props are also accepted.

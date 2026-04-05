@@ -1,0 +1,72 @@
+---
+title: Charts
+description: Glassmorphism-styled area and bar charts built on Recharts, with a shared glass tooltip.
+---
+
+## GlassAreaChart
+
+```tsx
+import { GlassAreaChart } from "koori-ui";
+
+const data = [
+  { month: "Jan", revenue: 4200, users: 1800 },
+  { month: "Feb", revenue: 5800, users: 2200 },
+  { month: "Mar", revenue: 4900, users: 2600 },
+  { month: "Apr", revenue: 7200, users: 3100 },
+];
+
+<GlassAreaChart
+  data={data}
+  index="month"
+  categories={[
+    { key: "revenue", color: "var(--koori-primary)", name: "Revenue" },
+    { key: "users", color: "var(--koori-accent)", name: "Users" },
+  ]}
+  height={300}
+/>
+```
+
+## GlassBarChart
+
+```tsx
+import { GlassBarChart } from "koori-ui";
+
+<GlassBarChart
+  data={data}
+  index="month"
+  categories={[
+    { key: "revenue", color: "var(--koori-primary)", name: "Revenue" },
+  ]}
+  height={260}
+/>
+```
+
+## GlassChartTooltip
+
+The tooltip is used automatically inside `GlassAreaChart` and `GlassBarChart`. You can also use it standalone with Recharts.
+
+```tsx
+import { GlassChartTooltip } from "koori-ui";
+import { AreaChart, Tooltip } from "recharts";
+
+<AreaChart data={data}>
+  <Tooltip content={<GlassChartTooltip valuePrefix="$" />} />
+</AreaChart>
+```
+
+## Props — GlassAreaChart / GlassBarChart
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `data` | `object[]` | — | Array of data objects (required) |
+| `index` | `string` | — | Key used for the X-axis labels (required) |
+| `categories` | `{ key: string; color: string; name?: string }[]` | — | Data series to render (required) |
+| `height` | `number` | `300` | Chart height in pixels |
+| `className` | `string` | — | Additional CSS classes on the wrapper div |
+
+## Props — GlassChartTooltip
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `valuePrefix` | `string` | `""` | String prepended to each value (e.g. `"$"`) |
+| `valueSuffix` | `string` | `""` | String appended to each value (e.g. `"%"`) |
