@@ -14,6 +14,14 @@
 
 ---
 
+## Live Demo
+
+**[View the interactive demo →](https://koori-ui-example-nextjs.vercel.app)**
+
+Explore all 27+ components, themes, and color presets in action.
+
+---
+
 ## Features
 
 - 🪟 **27+ components** — General, Layout, Form, Navigation, Data Display, Feedback
