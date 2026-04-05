@@ -64,7 +64,10 @@ export function GlassAreaChart({
     index: string;
 }) {
     const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
+    useEffect(() => {
+        const raf = requestAnimationFrame(() => setMounted(true));
+        return () => cancelAnimationFrame(raf);
+    }, []);
 
     if (!mounted) {
         return <div className={cn("w-full", className)} style={{ height, minHeight: height }} />;
@@ -72,7 +75,7 @@ export function GlassAreaChart({
 
     return (
         <div className={cn("w-full", className)} style={{ height, minHeight: height, minWidth: 0 }}>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height="100%" minWidth={200}>
                 <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                     <defs>
                         {categories.map((cat, i) => (
@@ -133,7 +136,10 @@ export function GlassBarChart({
     index: string;
 }) {
     const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
+    useEffect(() => {
+        const raf = requestAnimationFrame(() => setMounted(true));
+        return () => cancelAnimationFrame(raf);
+    }, []);
 
     if (!mounted) {
         return <div className={cn("w-full", className)} style={{ height, minHeight: height }} />;
@@ -141,7 +147,7 @@ export function GlassBarChart({
 
     return (
         <div className={cn("w-full", className)} style={{ height, minHeight: height, minWidth: 0 }}>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height="100%" minWidth={200}>
                 <BarChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }} barSize={32}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.06)" />
                     <XAxis

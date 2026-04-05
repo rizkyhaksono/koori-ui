@@ -3,7 +3,11 @@
     "allow": [
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['version']\\)\")",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(ls node_modules/fumadocs-mdx/dist/*.d.ts)",
+      "Bash(grep \"createMDXSource\\\\|toFumadocsSource\" node_modules/fumadocs-mdx/dist/*.d.ts)",
+      "Bash(node_modules/.bin/next info:*)",
+      "Bash(npm link:*)"
     ],
     "additionalDirectories": [
       "/home/sarana3/workspace/personal/koori-ui/docs/app/docs"
