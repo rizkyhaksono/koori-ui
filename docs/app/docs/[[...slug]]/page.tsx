@@ -7,6 +7,23 @@ import {
 } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import defaultMdxComponents from "fumadocs-ui/mdx";
+import { Preview, PreviewColumn, PreviewGrid } from "@/app/components/preview";
+import { ButtonDemo, BadgeDemo, TypographyDemo } from "@/app/components/examples/general";
+import { PanelDemo, CardDemo, SeparatorDemo } from "@/app/components/examples/layout-examples";
+import { InputDemo, TextareaDemo, CheckboxDemo, SwitchDemo, RadioDemo, SelectDemo, SliderDemo } from "@/app/components/examples/form";
+import { AlertDemo, ProgressDemo, SkeletonDemo, DialogDemo, TooltipDemo, PopoverDemo, ToastDemo } from "@/app/components/examples/feedback";
+import { TabsDemo, BreadcrumbDemo, DropdownMenuDemo } from "@/app/components/examples/navigation";
+import { AvatarDemo, TableDemo, StatCardDemo } from "@/app/components/examples/data-display";
+
+const customComponents = {
+  Preview, PreviewColumn, PreviewGrid,
+  ButtonDemo, BadgeDemo, TypographyDemo,
+  PanelDemo, CardDemo, SeparatorDemo,
+  InputDemo, TextareaDemo, CheckboxDemo, SwitchDemo, RadioDemo, SelectDemo, SliderDemo,
+  AlertDemo, ProgressDemo, SkeletonDemo, DialogDemo, TooltipDemo, PopoverDemo, ToastDemo,
+  TabsDemo, BreadcrumbDemo, DropdownMenuDemo,
+  AvatarDemo, TableDemo, StatCardDemo,
+};
 
 export default async function Page({
   params,
@@ -24,7 +41,7 @@ export default async function Page({
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDX components={{ ...defaultMdxComponents }} />
+        <MDX components={{ ...defaultMdxComponents, ...customComponents }} />
       </DocsBody>
     </DocsPage>
   );
