@@ -469,4 +469,409 @@ const data = [
   categories={[{ key: 'revenue', color: 'var(--koori-primary)', name: 'Revenue' }]}
 />`,
   },
+  GlassAccordion: {
+    name: "GlassAccordion",
+    description: "Collapsible section groups powered by Radix UI.",
+    category: "Disclosure",
+    radix: "@radix-ui/react-accordion",
+    subComponents: ["GlassAccordionItem", "GlassAccordionTrigger", "GlassAccordionContent"],
+    props: [
+      { name: "type", type: '"single" | "multiple"', description: "Single or multi-open behavior" },
+      { name: "collapsible", type: "boolean", default: "false", description: "Allow closing (single type only)" },
+      { name: "defaultValue", type: "string | string[]", description: "Default open item(s)" },
+      { name: "value", type: "string | string[]", description: "Controlled open item(s)" },
+      { name: "onValueChange", type: "(value: string | string[]) => void", description: "Change handler" },
+    ],
+    example: `import { GlassAccordion, GlassAccordionItem, GlassAccordionTrigger, GlassAccordionContent } from 'koori-ui'
+
+<GlassAccordion type="single" collapsible>
+  <GlassAccordionItem value="item-1">
+    <GlassAccordionTrigger>Is it accessible?</GlassAccordionTrigger>
+    <GlassAccordionContent>Yes. Uses Radix UI primitives.</GlassAccordionContent>
+  </GlassAccordionItem>
+</GlassAccordion>`,
+  },
+  GlassAlertDialog: {
+    name: "GlassAlertDialog",
+    description: "Confirmation modal for destructive actions powered by Radix UI.",
+    category: "Overlay",
+    radix: "@radix-ui/react-alert-dialog",
+    subComponents: ["GlassAlertDialogTrigger", "GlassAlertDialogContent", "GlassAlertDialogTitle", "GlassAlertDialogDescription", "GlassAlertDialogAction", "GlassAlertDialogCancel"],
+    props: [
+      { name: "open", type: "boolean", description: "Controlled open state" },
+      { name: "onOpenChange", type: "(open: boolean) => void", description: "Change handler" },
+    ],
+    example: `import { GlassAlertDialog, GlassAlertDialogTrigger, GlassAlertDialogContent, GlassAlertDialogTitle, GlassAlertDialogAction, GlassAlertDialogCancel } from 'koori-ui'
+
+<GlassAlertDialog>
+  <GlassAlertDialogTrigger asChild><button>Delete</button></GlassAlertDialogTrigger>
+  <GlassAlertDialogContent>
+    <GlassAlertDialogTitle>Are you sure?</GlassAlertDialogTitle>
+    <GlassAlertDialogAction>Confirm</GlassAlertDialogAction>
+    <GlassAlertDialogCancel>Cancel</GlassAlertDialogCancel>
+  </GlassAlertDialogContent>
+</GlassAlertDialog>`,
+  },
+  GlassToggle: {
+    name: "GlassToggle",
+    description: "Pressable toggle button powered by Radix UI.",
+    category: "Form",
+    radix: "@radix-ui/react-toggle",
+    props: [
+      { name: "pressed", type: "boolean", description: "Controlled pressed state" },
+      { name: "defaultPressed", type: "boolean", description: "Default pressed state" },
+      { name: "onPressedChange", type: "(pressed: boolean) => void", description: "Change handler" },
+      { name: "size", type: '"sm" | "md" | "lg"', default: '"md"', description: "Button size" },
+      { name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual style" },
+    ],
+    example: `import { GlassToggle } from 'koori-ui'
+
+<GlassToggle aria-label="Toggle bold">B</GlassToggle>`,
+  },
+  GlassToggleGroup: {
+    name: "GlassToggleGroup",
+    description: "Group of toggle buttons (e.g. toolbar) powered by Radix UI.",
+    category: "Form",
+    radix: "@radix-ui/react-toggle-group",
+    subComponents: ["GlassToggleGroupItem"],
+    props: [
+      { name: "type", type: '"single" | "multiple"', description: "Single or multi-selection" },
+      { name: "value", type: "string | string[]", description: "Controlled value(s)" },
+      { name: "defaultValue", type: "string | string[]", description: "Default value(s)" },
+      { name: "size", type: '"sm" | "md" | "lg"', default: '"md"', description: "Item size" },
+      { name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual style" },
+    ],
+    example: `import { GlassToggleGroup, GlassToggleGroupItem } from 'koori-ui'
+
+<GlassToggleGroup type="single" defaultValue="bold" variant="outline">
+  <GlassToggleGroupItem value="bold">B</GlassToggleGroupItem>
+  <GlassToggleGroupItem value="italic">I</GlassToggleGroupItem>
+</GlassToggleGroup>`,
+  },
+  GlassLabel: {
+    name: "GlassLabel",
+    description: "Accessible form label powered by Radix UI.",
+    category: "Form",
+    radix: "@radix-ui/react-label",
+    props: [
+      { name: "htmlFor", type: "string", description: "Target input ID" },
+    ],
+    example: `import { GlassLabel, GlassInput } from 'koori-ui'
+
+<GlassLabel htmlFor="email">Email</GlassLabel>
+<GlassInput id="email" type="email" />`,
+  },
+  GlassHoverCard: {
+    name: "GlassHoverCard",
+    description: "Rich preview card on hover powered by Radix UI.",
+    category: "Overlay",
+    radix: "@radix-ui/react-hover-card",
+    subComponents: ["GlassHoverCardTrigger", "GlassHoverCardContent"],
+    props: [
+      { name: "openDelay", type: "number", default: "700", description: "Open delay in ms" },
+      { name: "closeDelay", type: "number", default: "300", description: "Close delay in ms" },
+    ],
+    example: `import { GlassHoverCard, GlassHoverCardTrigger, GlassHoverCardContent } from 'koori-ui'
+
+<GlassHoverCard>
+  <GlassHoverCardTrigger>Hover me</GlassHoverCardTrigger>
+  <GlassHoverCardContent>Preview content here</GlassHoverCardContent>
+</GlassHoverCard>`,
+  },
+  GlassScrollArea: {
+    name: "GlassScrollArea",
+    description: "Custom scrollbar container powered by Radix UI.",
+    category: "Layout",
+    radix: "@radix-ui/react-scroll-area",
+    subComponents: ["GlassScrollBar"],
+    props: [
+      { name: "type", type: '"auto" | "always" | "scroll" | "hover"', default: '"hover"', description: "Scrollbar visibility" },
+      { name: "scrollHideDelay", type: "number", default: "600", description: "Hide delay in ms" },
+    ],
+    example: `import { GlassScrollArea } from 'koori-ui'
+
+<GlassScrollArea className="h-40 w-64">
+  <div>Scrollable content...</div>
+</GlassScrollArea>`,
+  },
+  GlassContextMenu: {
+    name: "GlassContextMenu",
+    description: "Right-click context menu powered by Radix UI.",
+    category: "Navigation",
+    radix: "@radix-ui/react-context-menu",
+    subComponents: ["GlassContextMenuTrigger", "GlassContextMenuContent", "GlassContextMenuItem", "GlassContextMenuSeparator", "GlassContextMenuLabel"],
+    props: [],
+    example: `import { GlassContextMenu, GlassContextMenuTrigger, GlassContextMenuContent, GlassContextMenuItem } from 'koori-ui'
+
+<GlassContextMenu>
+  <GlassContextMenuTrigger>Right-click area</GlassContextMenuTrigger>
+  <GlassContextMenuContent>
+    <GlassContextMenuItem>Cut</GlassContextMenuItem>
+    <GlassContextMenuItem>Copy</GlassContextMenuItem>
+  </GlassContextMenuContent>
+</GlassContextMenu>`,
+  },
+  GlassCollapsible: {
+    name: "GlassCollapsible",
+    description: "Single collapsible section powered by Radix UI.",
+    category: "Disclosure",
+    radix: "@radix-ui/react-collapsible",
+    subComponents: ["GlassCollapsibleTrigger", "GlassCollapsibleContent"],
+    props: [
+      { name: "open", type: "boolean", description: "Controlled open state" },
+      { name: "defaultOpen", type: "boolean", description: "Default open state" },
+      { name: "onOpenChange", type: "(open: boolean) => void", description: "Change handler" },
+    ],
+    example: `import { GlassCollapsible, GlassCollapsibleTrigger, GlassCollapsibleContent } from 'koori-ui'
+
+<GlassCollapsible>
+  <GlassCollapsibleTrigger>Toggle</GlassCollapsibleTrigger>
+  <GlassCollapsibleContent>Hidden content</GlassCollapsibleContent>
+</GlassCollapsible>`,
+  },
+  GlassNavigationMenu: {
+    name: "GlassNavigationMenu",
+    description: "Top navigation with dropdown panels powered by Radix UI.",
+    category: "Navigation",
+    radix: "@radix-ui/react-navigation-menu",
+    subComponents: ["GlassNavigationMenuList", "GlassNavigationMenuItem", "GlassNavigationMenuTrigger", "GlassNavigationMenuContent", "GlassNavigationMenuLink"],
+    props: [
+      { name: "defaultValue", type: "string", description: "Initially active item" },
+      { name: "value", type: "string", description: "Controlled active item" },
+      { name: "onValueChange", type: "(value: string) => void", description: "Change handler" },
+    ],
+    example: `import { GlassNavigationMenu, GlassNavigationMenuList, GlassNavigationMenuItem, GlassNavigationMenuTrigger, GlassNavigationMenuContent } from 'koori-ui'
+
+<GlassNavigationMenu>
+  <GlassNavigationMenuList>
+    <GlassNavigationMenuItem>
+      <GlassNavigationMenuTrigger>Products</GlassNavigationMenuTrigger>
+      <GlassNavigationMenuContent>Dropdown content</GlassNavigationMenuContent>
+    </GlassNavigationMenuItem>
+  </GlassNavigationMenuList>
+</GlassNavigationMenu>`,
+  },
+  GlassMenubar: {
+    name: "GlassMenubar",
+    description: "Application-style menu bar powered by Radix UI.",
+    category: "Navigation",
+    radix: "@radix-ui/react-menubar",
+    subComponents: ["GlassMenubarMenu", "GlassMenubarTrigger", "GlassMenubarContent", "GlassMenubarItem", "GlassMenubarSeparator"],
+    props: [],
+    example: `import { GlassMenubar, GlassMenubarMenu, GlassMenubarTrigger, GlassMenubarContent, GlassMenubarItem } from 'koori-ui'
+
+<GlassMenubar>
+  <GlassMenubarMenu>
+    <GlassMenubarTrigger>File</GlassMenubarTrigger>
+    <GlassMenubarContent>
+      <GlassMenubarItem>New</GlassMenubarItem>
+    </GlassMenubarContent>
+  </GlassMenubarMenu>
+</GlassMenubar>`,
+  },
+  GlassAspectRatio: {
+    name: "GlassAspectRatio",
+    description: "Maintain aspect ratio for media, powered by Radix UI.",
+    category: "Layout",
+    radix: "@radix-ui/react-aspect-ratio",
+    props: [
+      { name: "ratio", type: "number", default: "1", description: "Aspect ratio (e.g. 16/9)" },
+    ],
+    example: `import { GlassAspectRatio } from 'koori-ui'
+
+<GlassAspectRatio ratio={16 / 9}>
+  <img src="..." />
+</GlassAspectRatio>`,
+  },
+  GlassDrawer: {
+    name: "GlassDrawer",
+    description: "Side/bottom drawer with drag-to-dismiss powered by Vaul.",
+    category: "Overlay",
+    radix: "vaul",
+    subComponents: ["GlassDrawerTrigger", "GlassDrawerContent", "GlassDrawerHeader", "GlassDrawerTitle", "GlassDrawerDescription", "GlassDrawerFooter", "GlassDrawerClose"],
+    props: [
+      { name: "open", type: "boolean", description: "Controlled open state" },
+      { name: "defaultOpen", type: "boolean", description: "Default open state" },
+      { name: "onOpenChange", type: "(open: boolean) => void", description: "Change handler" },
+      { name: "shouldScaleBackground", type: "boolean", default: "true", description: "Scale background on open" },
+    ],
+    example: `import { GlassDrawer, GlassDrawerTrigger, GlassDrawerContent, GlassDrawerHeader, GlassDrawerTitle } from 'koori-ui'
+
+<GlassDrawer>
+  <GlassDrawerTrigger asChild><button>Open</button></GlassDrawerTrigger>
+  <GlassDrawerContent>
+    <GlassDrawerHeader><GlassDrawerTitle>Edit profile</GlassDrawerTitle></GlassDrawerHeader>
+  </GlassDrawerContent>
+</GlassDrawer>`,
+  },
+  GlassCalendar: {
+    name: "GlassCalendar",
+    description: "Date picker calendar powered by react-day-picker.",
+    category: "Form",
+    radix: "react-day-picker",
+    props: [
+      { name: "mode", type: '"single" | "multiple" | "range"', default: '"single"', description: "Selection mode" },
+      { name: "selected", type: "Date | Date[] | DateRange", description: "Selected date(s)" },
+      { name: "onSelect", type: "(date) => void", description: "Change handler" },
+      { name: "disabled", type: "Date[] | ((date: Date) => boolean)", description: "Disabled dates" },
+    ],
+    example: `import { GlassCalendar } from 'koori-ui'
+import { useState } from 'react'
+
+const [date, setDate] = useState<Date | undefined>()
+<GlassCalendar mode="single" selected={date} onSelect={setDate} />`,
+  },
+  GlassCommand: {
+    name: "GlassCommand",
+    description: "Command palette with fuzzy search (cmdk).",
+    category: "Overlay",
+    radix: "cmdk",
+    subComponents: ["GlassCommandInput", "GlassCommandList", "GlassCommandEmpty", "GlassCommandGroup", "GlassCommandItem", "GlassCommandSeparator", "GlassCommandShortcut"],
+    props: [],
+    example: `import { GlassCommand, GlassCommandInput, GlassCommandList, GlassCommandGroup, GlassCommandItem, GlassCommandEmpty } from 'koori-ui'
+
+<GlassCommand>
+  <GlassCommandInput placeholder="Search..." />
+  <GlassCommandList>
+    <GlassCommandEmpty>No results.</GlassCommandEmpty>
+    <GlassCommandGroup heading="Suggestions">
+      <GlassCommandItem>Calendar</GlassCommandItem>
+    </GlassCommandGroup>
+  </GlassCommandList>
+</GlassCommand>`,
+  },
+  GlassCarousel: {
+    name: "GlassCarousel",
+    description: "Touch-friendly carousel powered by embla-carousel-react.",
+    category: "Data Display",
+    radix: "embla-carousel-react",
+    subComponents: ["GlassCarouselContent", "GlassCarouselItem", "GlassCarouselPrevious", "GlassCarouselNext"],
+    props: [
+      { name: "orientation", type: '"horizontal" | "vertical"', default: '"horizontal"', description: "Scroll direction" },
+      { name: "opts", type: "CarouselOptions", description: "Embla options" },
+      { name: "setApi", type: "(api: CarouselApi) => void", description: "Get carousel API" },
+    ],
+    example: `import { GlassCarousel, GlassCarouselContent, GlassCarouselItem, GlassCarouselPrevious, GlassCarouselNext } from 'koori-ui'
+
+<GlassCarousel>
+  <GlassCarouselContent>
+    <GlassCarouselItem>Slide 1</GlassCarouselItem>
+    <GlassCarouselItem>Slide 2</GlassCarouselItem>
+  </GlassCarouselContent>
+  <GlassCarouselPrevious />
+  <GlassCarouselNext />
+</GlassCarousel>`,
+  },
+  GlassInputOTP: {
+    name: "GlassInputOTP",
+    description: "One-time password input (powered by input-otp).",
+    category: "Form",
+    radix: "input-otp",
+    subComponents: ["GlassInputOTPGroup", "GlassInputOTPSlot", "GlassInputOTPSeparator"],
+    props: [
+      { name: "maxLength", type: "number", description: "Number of slots" },
+      { name: "value", type: "string", description: "Controlled value" },
+      { name: "onChange", type: "(value: string) => void", description: "Change handler" },
+      { name: "onComplete", type: "(value: string) => void", description: "Complete handler" },
+    ],
+    example: `import { GlassInputOTP, GlassInputOTPGroup, GlassInputOTPSlot, GlassInputOTPSeparator } from 'koori-ui'
+
+<GlassInputOTP maxLength={6}>
+  <GlassInputOTPGroup>
+    <GlassInputOTPSlot index={0} />
+    <GlassInputOTPSlot index={1} />
+    <GlassInputOTPSlot index={2} />
+  </GlassInputOTPGroup>
+  <GlassInputOTPSeparator />
+  <GlassInputOTPGroup>
+    <GlassInputOTPSlot index={3} />
+    <GlassInputOTPSlot index={4} />
+    <GlassInputOTPSlot index={5} />
+  </GlassInputOTPGroup>
+</GlassInputOTP>`,
+  },
+  GlassPagination: {
+    name: "GlassPagination",
+    description: "Page navigation with prev/next and numbered buttons.",
+    category: "Navigation",
+    props: [
+      { name: "total", type: "number", description: "Total number of pages" },
+      { name: "current", type: "number", description: "Currently active page (1-indexed)" },
+      { name: "onPageChange", type: "(page: number) => void", description: "Page change handler" },
+      { name: "siblingCount", type: "number", default: "1", description: "Pages shown around current" },
+    ],
+    example: `import { GlassPagination } from 'koori-ui'
+import { useState } from 'react'
+
+const [page, setPage] = useState(1)
+<GlassPagination total={10} current={page} onPageChange={setPage} />`,
+  },
+  GlassSpinner: {
+    name: "GlassSpinner",
+    description: "Animated loading spinner with optional label.",
+    category: "Feedback",
+    props: [
+      { name: "size", type: '"sm" | "md" | "lg" | "xl"', default: '"md"', description: "Spinner size" },
+      { name: "label", type: "string", description: "Accessibility label + visible text" },
+    ],
+    example: `import { GlassSpinner } from 'koori-ui'
+
+<GlassSpinner size="lg" label="Loading..." />`,
+  },
+  GlassEmpty: {
+    name: "GlassEmpty",
+    description: "Empty state placeholder with icon, title, and optional action.",
+    category: "Feedback",
+    props: [
+      { name: "title", type: "string", description: "Primary message (required)" },
+      { name: "description", type: "string", description: "Secondary explanation" },
+      { name: "icon", type: "ReactNode", description: "Custom icon (defaults to Inbox)" },
+      { name: "action", type: "ReactNode", description: "Optional action element (button)" },
+    ],
+    example: `import { GlassEmpty, GlassButton } from 'koori-ui'
+
+<GlassEmpty
+  title="No messages yet"
+  description="When you receive messages, they'll appear here."
+  action={<GlassButton size="sm" variant="primary">Compose</GlassButton>}
+/>`,
+  },
+  GlassTimeline: {
+    name: "GlassTimeline",
+    description: "Vertical activity timeline with status-colored dots.",
+    category: "Data Display",
+    subComponents: ["GlassTimelineItem"],
+    props: [
+      { name: "time", type: "string", description: "Timestamp label (on GlassTimelineItem)" },
+      { name: "title", type: "string", description: "Item title (required, on GlassTimelineItem)" },
+      { name: "description", type: "string", description: "Item description (on GlassTimelineItem)" },
+      { name: "status", type: '"default" | "success" | "warning" | "error"', default: '"default"', description: "Dot color (on GlassTimelineItem)" },
+      { name: "icon", type: "ReactNode", description: "Icon inside the dot (on GlassTimelineItem)" },
+    ],
+    example: `import { GlassTimeline, GlassTimelineItem } from 'koori-ui'
+
+<GlassTimeline>
+  <GlassTimelineItem status="success" time="2h ago" title="Deployed v1.1.0" description="Release successful." />
+  <GlassTimelineItem status="warning" time="1d ago" title="Build warning" description="Bundle size up." />
+</GlassTimeline>`,
+  },
+  GlassLineChart: {
+    name: "GlassLineChart",
+    description: "Line chart built on Recharts with glass-styled tooltips.",
+    category: "Data Display",
+    radix: "recharts",
+    props: [
+      { name: "data", type: "any[]", description: "Chart data array" },
+      { name: "index", type: "string", description: "Key used for X-axis labels" },
+      { name: "categories", type: "{ key: string; color: string; name?: string }[]", description: "Data series" },
+      { name: "height", type: "number", default: "300", description: "Chart height in px" },
+    ],
+    example: `import { GlassLineChart } from 'koori-ui'
+
+<GlassLineChart
+  data={data}
+  index="month"
+  categories={[{ key: 'revenue', color: 'var(--koori-primary)', name: 'Revenue' }]}
+/>`,
+  },
 };
