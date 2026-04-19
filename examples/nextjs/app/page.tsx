@@ -1,5 +1,6 @@
 import { GlassButton, GlassPanel } from "koori-ui";
 import { ComponentsShowcase } from "./components/showcase";
+import { ComponentsShowcaseV2 } from "./components/showcase-v2";
 import { ThemeControls } from "./components/theme-controls";
 
 export default function Home() {
@@ -41,6 +42,11 @@ export default function Home() {
 
           <GlassPanel variant="elevated" className="showcase-shell p-5 sm:p-8 lg:p-10">
             <ComponentsShowcase />
+          </GlassPanel>
+
+          <GlassPanel variant="elevated" className="showcase-shell mt-10 p-5 sm:p-8 lg:p-10">
+            <h2 className="section-label mb-4">v2.0 — 21 New Components</h2>
+            <ComponentsShowcaseV2 />
           </GlassPanel>
         </section>
 
