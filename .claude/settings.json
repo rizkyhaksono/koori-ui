@@ -7,7 +7,11 @@
       "Bash(ls node_modules/fumadocs-mdx/dist/*.d.ts)",
       "Bash(grep \"createMDXSource\\\\|toFumadocsSource\" node_modules/fumadocs-mdx/dist/*.d.ts)",
       "Bash(node_modules/.bin/next info:*)",
-      "Bash(npm link:*)"
+      "Bash(npm link:*)",
+      "Bash(npm whoami *)",
+      "Bash(npm view *)",
+      "Bash(rm -f package-lock.json)",
+      "Bash(rm -rf node_modules)"
     ],
     "additionalDirectories": [
       "/home/sarana3/workspace/personal/koori-ui/docs/app/docs"

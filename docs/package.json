@@ -14,7 +14,7 @@
     "next": "^15",
     "react": "^19",
     "react-dom": "^19",
-    "koori-ui": "^1.0.6",
+    "koori-ui": "^1.0.7",
     "lucide-react": "^1.7.0"
   },
   "devDependencies": {
