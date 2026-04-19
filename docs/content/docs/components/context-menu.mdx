@@ -1,0 +1,50 @@
+---
+title: GlassContextMenu
+description: A menu triggered by a right-click (or long-press) gesture on a region.
+---
+
+## Preview
+
+<Preview>
+<ContextMenuDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import {
+  GlassContextMenu,
+  GlassContextMenuTrigger,
+  GlassContextMenuContent,
+  GlassContextMenuItem,
+  GlassContextMenuSeparator,
+} from "koori-ui";
+
+<GlassContextMenu>
+  <GlassContextMenuTrigger>Right-click here</GlassContextMenuTrigger>
+  <GlassContextMenuContent>
+    <GlassContextMenuItem>Cut</GlassContextMenuItem>
+    <GlassContextMenuItem>Copy</GlassContextMenuItem>
+    <GlassContextMenuSeparator />
+    <GlassContextMenuItem>Paste</GlassContextMenuItem>
+  </GlassContextMenuContent>
+</GlassContextMenu>
+```
+
+## Props
+
+### GlassContextMenu
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `onOpenChange` | `(open: boolean) => void` | — | Fired when open state changes |
+| `modal` | `boolean` | `true` | Prevent interactions with outside content |
+
+### GlassContextMenuItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `disabled` | `boolean` | `false` | Disable the item |
+| `onSelect` | `(event) => void` | — | Fired when the item is selected |
+
+All Radix ContextMenu props are also supported.

@@ -1,0 +1,44 @@
+---
+title: GlassCarousel
+description: A swipeable slideshow of slides built on Embla Carousel.
+---
+
+## Preview
+
+<PreviewColumn>
+<CarouselDemo />
+</PreviewColumn>
+
+## Usage
+
+```tsx
+import {
+  GlassCarousel,
+  GlassCarouselContent,
+  GlassCarouselItem,
+  GlassCarouselPrevious,
+  GlassCarouselNext,
+} from "koori-ui";
+
+<GlassCarousel>
+  <GlassCarouselContent>
+    <GlassCarouselItem>Slide 1</GlassCarouselItem>
+    <GlassCarouselItem>Slide 2</GlassCarouselItem>
+  </GlassCarouselContent>
+  <GlassCarouselPrevious />
+  <GlassCarouselNext />
+</GlassCarousel>
+```
+
+## Props
+
+### GlassCarousel
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Scroll axis |
+| `opts` | `CarouselOptions` | — | Embla carousel options |
+| `plugins` | `CarouselPlugin` | — | Embla carousel plugins |
+| `setApi` | `(api: CarouselApi) => void` | — | Receive the Embla API for programmatic control |
+
+All native `<div>` props are also accepted on the root.

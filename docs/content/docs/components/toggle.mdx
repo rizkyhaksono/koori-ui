@@ -1,0 +1,49 @@
+---
+title: GlassToggle
+description: A two-state button that can be either on or off.
+---
+
+## Preview
+
+<Preview>
+<ToggleDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassToggle } from "koori-ui";
+import { Bold } from "lucide-react";
+
+<GlassToggle aria-label="Toggle bold">
+  <Bold className="h-4 w-4" />
+</GlassToggle>
+```
+
+## Variants
+
+```tsx
+<GlassToggle variant="default">Default</GlassToggle>
+<GlassToggle variant="outline">Outline</GlassToggle>
+```
+
+## Sizes
+
+```tsx
+<GlassToggle size="sm">Small</GlassToggle>
+<GlassToggle size="md">Medium</GlassToggle>
+<GlassToggle size="lg">Large</GlassToggle>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `pressed` | `boolean` | — | Controlled pressed state |
+| `defaultPressed` | `boolean` | `false` | Default pressed state |
+| `onPressedChange` | `(pressed: boolean) => void` | — | Fired when pressed state changes |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"` | Toggle size |
+| `variant` | `"default" \| "outline"` | `"default"` | Visual style |
+| `disabled` | `boolean` | `false` | Disable the toggle |
+
+All Radix Toggle props are also supported.

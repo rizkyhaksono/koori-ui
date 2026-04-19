@@ -1,0 +1,50 @@
+---
+title: GlassCommand
+description: A composable command palette / combobox built on cmdk.
+---
+
+## Preview
+
+<PreviewColumn>
+<CommandDemo />
+</PreviewColumn>
+
+## Usage
+
+```tsx
+import {
+  GlassCommand,
+  GlassCommandInput,
+  GlassCommandList,
+  GlassCommandEmpty,
+  GlassCommandGroup,
+  GlassCommandItem,
+  GlassCommandSeparator,
+} from "koori-ui";
+
+<GlassCommand>
+  <GlassCommandInput placeholder="Type a command..." />
+  <GlassCommandList>
+    <GlassCommandEmpty>No results found.</GlassCommandEmpty>
+    <GlassCommandGroup heading="Suggestions">
+      <GlassCommandItem>Search docs</GlassCommandItem>
+      <GlassCommandItem>New file</GlassCommandItem>
+    </GlassCommandGroup>
+  </GlassCommandList>
+</GlassCommand>
+```
+
+## Parts
+
+| Part | Description |
+| --- | --- |
+| `GlassCommand` | Root container |
+| `GlassCommandInput` | Search input with built-in icon |
+| `GlassCommandList` | Scrollable list of groups and items |
+| `GlassCommandEmpty` | Rendered when no items match |
+| `GlassCommandGroup` | Group of items with an optional `heading` |
+| `GlassCommandItem` | Selectable item |
+| `GlassCommandSeparator` | Horizontal divider |
+| `GlassCommandShortcut` | Inline keyboard shortcut label |
+
+All `cmdk` props are passed through to the underlying primitives.

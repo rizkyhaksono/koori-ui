@@ -1,0 +1,49 @@
+---
+title: GlassAccordion
+description: A vertically stacked set of interactive headings that reveal associated content.
+---
+
+## Preview
+
+<PreviewColumn>
+<AccordionDemo />
+</PreviewColumn>
+
+## Usage
+
+```tsx
+import {
+  GlassAccordion,
+  GlassAccordionItem,
+  GlassAccordionTrigger,
+  GlassAccordionContent,
+} from "koori-ui";
+
+<GlassAccordion type="single" collapsible>
+  <GlassAccordionItem value="item-1">
+    <GlassAccordionTrigger>Is it accessible?</GlassAccordionTrigger>
+    <GlassAccordionContent>Yes, it follows WAI-ARIA patterns.</GlassAccordionContent>
+  </GlassAccordionItem>
+</GlassAccordion>
+```
+
+## Props
+
+### GlassAccordion
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `type` | `"single" \| "multiple"` | — | Whether one or multiple items can open |
+| `collapsible` | `boolean` | `false` | Allow closing all items (single mode only) |
+| `value` | `string \| string[]` | — | Controlled open value |
+| `defaultValue` | `string \| string[]` | — | Default open value |
+| `onValueChange` | `(value) => void` | — | Fired when open item(s) change |
+
+### GlassAccordionItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Unique identifier for the item |
+| `disabled` | `boolean` | `false` | Disable the item |
+
+All Radix Accordion props are also supported.

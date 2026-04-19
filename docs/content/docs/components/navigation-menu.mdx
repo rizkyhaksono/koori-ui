@@ -1,0 +1,55 @@
+---
+title: GlassNavigationMenu
+description: A collection of links for navigating websites with rich flyout panels.
+---
+
+## Preview
+
+<Preview>
+<NavigationMenuDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import {
+  GlassNavigationMenu,
+  GlassNavigationMenuList,
+  GlassNavigationMenuItem,
+  GlassNavigationMenuTrigger,
+  GlassNavigationMenuContent,
+  GlassNavigationMenuLink,
+} from "koori-ui";
+
+<GlassNavigationMenu>
+  <GlassNavigationMenuList>
+    <GlassNavigationMenuItem>
+      <GlassNavigationMenuTrigger>Getting Started</GlassNavigationMenuTrigger>
+      <GlassNavigationMenuContent>
+        <GlassNavigationMenuLink href="/docs">Introduction</GlassNavigationMenuLink>
+      </GlassNavigationMenuContent>
+    </GlassNavigationMenuItem>
+  </GlassNavigationMenuList>
+</GlassNavigationMenu>
+```
+
+## Props
+
+### GlassNavigationMenu
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Controlled active item value |
+| `defaultValue` | `string` | — | Default active item value |
+| `onValueChange` | `(value: string) => void` | — | Fired when active item changes |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Orientation of the menu |
+| `delayDuration` | `number` | `200` | Hover delay before content opens |
+
+### GlassNavigationMenuLink
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `active` | `boolean` | `false` | Mark the link as currently active |
+| `onSelect` | `(event) => void` | — | Fired when the link is selected |
+
+All Radix NavigationMenu props are also supported.

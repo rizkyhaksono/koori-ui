@@ -1,0 +1,49 @@
+---
+title: GlassTimeline
+description: A vertical list of events with colored status markers.
+---
+
+## Preview
+
+<PreviewColumn>
+<TimelineDemo />
+</PreviewColumn>
+
+## Usage
+
+```tsx
+import { GlassTimeline, GlassTimelineItem } from "koori-ui";
+
+<GlassTimeline>
+  <GlassTimelineItem
+    time="10:24 AM"
+    title="Deploy succeeded"
+    description="Production build deployed without errors."
+    status="success"
+  />
+  <GlassTimelineItem
+    time="09:30 AM"
+    title="Deploy failed"
+    description="TypeScript errors blocked the build."
+    status="error"
+  />
+</GlassTimeline>
+```
+
+## Props
+
+### GlassTimeline
+
+Extends native `<ol>` props. No additional props.
+
+### GlassTimelineItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | — | Event title (required) |
+| `description` | `string` | — | Supporting text |
+| `time` | `string` | — | Timestamp shown on the right |
+| `status` | `"default" \| "success" \| "warning" \| "error"` | `"default"` | Marker color |
+| `icon` | `ReactNode` | — | Icon rendered inside the marker |
+
+All native `<li>` props are also accepted on items.

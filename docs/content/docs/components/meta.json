@@ -27,6 +27,27 @@
     "breadcrumb",
     "separator",
     "typography",
-    "chart"
+    "chart",
+    "accordion",
+    "alert-dialog",
+    "aspect-ratio",
+    "calendar",
+    "carousel",
+    "collapsible",
+    "command",
+    "context-menu",
+    "drawer",
+    "empty",
+    "hover-card",
+    "input-otp",
+    "label",
+    "menubar",
+    "navigation-menu",
+    "pagination",
+    "scroll-area",
+    "spinner",
+    "timeline",
+    "toggle",
+    "toggle-group"
   ]
 }

@@ -13,7 +13,13 @@ import { PanelDemo, CardDemo, SeparatorDemo } from "@/app/components/examples/la
 import { InputDemo, TextareaDemo, CheckboxDemo, SwitchDemo, RadioDemo, SelectDemo, SliderDemo } from "@/app/components/examples/form";
 import { AlertDemo, ProgressDemo, SkeletonDemo, DialogDemo, TooltipDemo, PopoverDemo, ToastDemo } from "@/app/components/examples/feedback";
 import { TabsDemo, BreadcrumbDemo, DropdownMenuDemo } from "@/app/components/examples/navigation";
-import { AvatarDemo, TableDemo, StatCardDemo } from "@/app/components/examples/data-display";
+import { AvatarDemo, TableDemo, StatCardDemo, LineChartDemo } from "@/app/components/examples/data-display";
+import { AccordionDemo, CollapsibleDemo } from "@/app/components/examples/disclosure";
+import { AlertDialogDemo, HoverCardDemo, ContextMenuDemo, DrawerDemo } from "@/app/components/examples/overlay";
+import { ToggleDemo, ToggleGroupDemo, LabelDemo, CalendarDemo, InputOTPDemo } from "@/app/components/examples/advanced-form";
+import { NavigationMenuDemo, MenubarDemo } from "@/app/components/examples/advanced-nav";
+import { CarouselDemo, AspectRatioDemo, ScrollAreaDemo } from "@/app/components/examples/media";
+import { PaginationDemo, SpinnerDemo, EmptyDemo, TimelineDemo, CommandDemo } from "@/app/components/examples/utility";
 
 const customComponents = {
   Preview, PreviewColumn, PreviewGrid,
@@ -22,7 +28,13 @@ const customComponents = {
   InputDemo, TextareaDemo, CheckboxDemo, SwitchDemo, RadioDemo, SelectDemo, SliderDemo,
   AlertDemo, ProgressDemo, SkeletonDemo, DialogDemo, TooltipDemo, PopoverDemo, ToastDemo,
   TabsDemo, BreadcrumbDemo, DropdownMenuDemo,
-  AvatarDemo, TableDemo, StatCardDemo,
+  AvatarDemo, TableDemo, StatCardDemo, LineChartDemo,
+  AccordionDemo, CollapsibleDemo,
+  AlertDialogDemo, HoverCardDemo, ContextMenuDemo, DrawerDemo,
+  ToggleDemo, ToggleGroupDemo, LabelDemo, CalendarDemo, InputOTPDemo,
+  NavigationMenuDemo, MenubarDemo,
+  CarouselDemo, AspectRatioDemo, ScrollAreaDemo,
+  PaginationDemo, SpinnerDemo, EmptyDemo, TimelineDemo, CommandDemo,
 };
 
 export default async function Page({

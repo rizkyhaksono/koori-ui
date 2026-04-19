@@ -1,0 +1,32 @@
+---
+title: GlassPagination
+description: Navigation control for paginated lists with page numbers and ellipses.
+---
+
+## Preview
+
+<Preview>
+<PaginationDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassPagination } from "koori-ui";
+import { useState } from "react";
+
+const [page, setPage] = useState(1);
+
+<GlassPagination total={10} current={page} onPageChange={setPage} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `total` | `number` | — | Total number of pages |
+| `current` | `number` | — | Currently active page (1-indexed) |
+| `onPageChange` | `(page: number) => void` | — | Fired when the user picks a page |
+| `siblingCount` | `number` | `1` | Pages shown on each side of the current page |
+
+All native `<nav>` props are also accepted.

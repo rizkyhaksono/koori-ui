@@ -1,0 +1,34 @@
+---
+title: GlassCalendar
+description: A date-picker calendar built on react-day-picker with glassmorphism styling.
+---
+
+## Preview
+
+<Preview>
+<CalendarDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassCalendar } from "koori-ui";
+import { useState } from "react";
+
+const [date, setDate] = useState<Date | undefined>(new Date());
+
+<GlassCalendar mode="single" selected={date} onSelect={setDate} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `mode` | `"single" \| "multiple" \| "range"` | — | Selection mode |
+| `selected` | `Date \| Date[] \| DateRange` | — | Controlled selection |
+| `onSelect` | `(value) => void` | — | Fired when the selection changes |
+| `disabled` | `Matcher \| Matcher[]` | — | Dates to disable |
+| `showOutsideDays` | `boolean` | `true` | Show days from adjacent months |
+| `numberOfMonths` | `number` | `1` | Number of months to render |
+
+All `react-day-picker` `DayPicker` props are also supported.

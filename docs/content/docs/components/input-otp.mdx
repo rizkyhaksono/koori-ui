@@ -1,0 +1,59 @@
+---
+title: GlassInputOTP
+description: Accessible one-time-password input split into individual slots.
+---
+
+## Preview
+
+<Preview>
+<InputOTPDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import {
+  GlassInputOTP,
+  GlassInputOTPGroup,
+  GlassInputOTPSlot,
+  GlassInputOTPSeparator,
+} from "koori-ui";
+import { useState } from "react";
+
+const [value, setValue] = useState("");
+
+<GlassInputOTP maxLength={6} value={value} onChange={setValue}>
+  <GlassInputOTPGroup>
+    <GlassInputOTPSlot index={0} />
+    <GlassInputOTPSlot index={1} />
+    <GlassInputOTPSlot index={2} />
+  </GlassInputOTPGroup>
+  <GlassInputOTPSeparator />
+  <GlassInputOTPGroup>
+    <GlassInputOTPSlot index={3} />
+    <GlassInputOTPSlot index={4} />
+    <GlassInputOTPSlot index={5} />
+  </GlassInputOTPGroup>
+</GlassInputOTP>
+```
+
+## Props
+
+### GlassInputOTP
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `maxLength` | `number` | — | Total number of characters |
+| `value` | `string` | — | Controlled value |
+| `onChange` | `(value: string) => void` | — | Fired when the value changes |
+| `onComplete` | `(value: string) => void` | — | Fired when `maxLength` is reached |
+| `disabled` | `boolean` | `false` | Disable the input |
+| `containerClassName` | `string` | — | Class applied to the slots container |
+
+### GlassInputOTPSlot
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `index` | `number` | — | Zero-based index of the slot in the OTP string |
+
+All `input-otp` props are also supported.

@@ -1,0 +1,43 @@
+---
+title: GlassCollapsible
+description: An interactive component which expands and collapses content.
+---
+
+## Preview
+
+<PreviewColumn>
+<CollapsibleDemo />
+</PreviewColumn>
+
+## Usage
+
+```tsx
+import {
+  GlassCollapsible,
+  GlassCollapsibleTrigger,
+  GlassCollapsibleContent,
+  GlassButton,
+} from "koori-ui";
+
+<GlassCollapsible>
+  <GlassCollapsibleTrigger asChild>
+    <GlassButton size="sm">Toggle</GlassButton>
+  </GlassCollapsibleTrigger>
+  <GlassCollapsibleContent>
+    Hidden content appears here.
+  </GlassCollapsibleContent>
+</GlassCollapsible>
+```
+
+## Props
+
+### GlassCollapsible
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Default open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Fired when open state changes |
+| `disabled` | `boolean` | `false` | Disable the trigger |
+
+All Radix Collapsible props are also supported.

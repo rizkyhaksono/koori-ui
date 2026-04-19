@@ -1,0 +1,53 @@
+---
+title: GlassAlertDialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+---
+
+## Preview
+
+<Preview>
+<AlertDialogDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import {
+  GlassAlertDialog,
+  GlassAlertDialogTrigger,
+  GlassAlertDialogContent,
+  GlassAlertDialogTitle,
+  GlassAlertDialogDescription,
+  GlassAlertDialogAction,
+  GlassAlertDialogCancel,
+  GlassButton,
+} from "koori-ui";
+
+<GlassAlertDialog>
+  <GlassAlertDialogTrigger asChild>
+    <GlassButton variant="primary">Delete</GlassButton>
+  </GlassAlertDialogTrigger>
+  <GlassAlertDialogContent>
+    <GlassAlertDialogTitle>Are you sure?</GlassAlertDialogTitle>
+    <GlassAlertDialogDescription>This action cannot be undone.</GlassAlertDialogDescription>
+    <div className="mt-6 flex justify-end gap-3">
+      <GlassAlertDialogCancel asChild><GlassButton>Cancel</GlassButton></GlassAlertDialogCancel>
+      <GlassAlertDialogAction asChild><GlassButton variant="primary">Continue</GlassButton></GlassAlertDialogAction>
+    </div>
+  </GlassAlertDialogContent>
+</GlassAlertDialog>
+```
+
+## Props
+
+### GlassAlertDialog
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Default open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Fired when the open state changes |
+
+Unlike `GlassDialog`, an alert dialog cannot be dismissed by pressing escape or clicking the overlay — the user must pick an action.
+
+All Radix AlertDialog props are also supported.

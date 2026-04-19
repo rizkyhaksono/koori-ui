@@ -1,0 +1,28 @@
+---
+title: GlassAspectRatio
+description: Constrain content to a fixed width-to-height ratio.
+---
+
+## Preview
+
+<Preview>
+<AspectRatioDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassAspectRatio } from "koori-ui";
+
+<GlassAspectRatio ratio={16 / 9}>
+  <img src="/cover.jpg" alt="" className="h-full w-full object-cover" />
+</GlassAspectRatio>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `ratio` | `number` | `1` | Width divided by height (e.g. `16 / 9`) |
+
+All native `<div>` props are also accepted.

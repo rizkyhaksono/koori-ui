@@ -1,0 +1,47 @@
+---
+title: GlassHoverCard
+description: Reveal rich preview content when users hover over a trigger.
+---
+
+## Preview
+
+<Preview>
+<HoverCardDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassHoverCard, GlassHoverCardTrigger, GlassHoverCardContent, GlassButton } from "koori-ui";
+
+<GlassHoverCard>
+  <GlassHoverCardTrigger asChild>
+    <GlassButton>Hover me</GlassButton>
+  </GlassHoverCardTrigger>
+  <GlassHoverCardContent>
+    Rich preview content goes here.
+  </GlassHoverCardContent>
+</GlassHoverCard>
+```
+
+## Props
+
+### GlassHoverCard
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Default open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Fired when open state changes |
+| `openDelay` | `number` | `700` | Delay in ms before opening |
+| `closeDelay` | `number` | `300` | Delay in ms before closing |
+
+### GlassHoverCardContent
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"top" \| "right" \| "bottom" \| "left"` | `"bottom"` | Side to render on |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment against the trigger |
+| `sideOffset` | `number` | `4` | Distance from the trigger |
+
+All Radix HoverCard props are also supported.

@@ -1,0 +1,27 @@
+---
+title: GlassLabel
+description: An accessible label associated with form controls.
+---
+
+## Preview
+
+<PreviewColumn>
+<LabelDemo />
+</PreviewColumn>
+
+## Usage
+
+```tsx
+import { GlassLabel, GlassInput } from "koori-ui";
+
+<GlassLabel htmlFor="email">Email</GlassLabel>
+<GlassInput id="email" type="email" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `htmlFor` | `string` | — | The id of the form control the label is bound to |
+
+All native `<label>` props are also accepted.

@@ -1,0 +1,56 @@
+---
+title: GlassDrawer
+description: A bottom-sheet style drawer that slides in from the edge of the screen.
+---
+
+## Preview
+
+<Preview>
+<DrawerDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import {
+  GlassDrawer,
+  GlassDrawerTrigger,
+  GlassDrawerContent,
+  GlassDrawerHeader,
+  GlassDrawerFooter,
+  GlassDrawerTitle,
+  GlassDrawerDescription,
+  GlassDrawerClose,
+  GlassButton,
+} from "koori-ui";
+
+<GlassDrawer>
+  <GlassDrawerTrigger asChild>
+    <GlassButton>Open Drawer</GlassButton>
+  </GlassDrawerTrigger>
+  <GlassDrawerContent>
+    <GlassDrawerHeader>
+      <GlassDrawerTitle>Edit profile</GlassDrawerTitle>
+      <GlassDrawerDescription>Make changes to your profile here.</GlassDrawerDescription>
+    </GlassDrawerHeader>
+    <GlassDrawerFooter>
+      <GlassDrawerClose asChild><GlassButton>Close</GlassButton></GlassDrawerClose>
+    </GlassDrawerFooter>
+  </GlassDrawerContent>
+</GlassDrawer>
+```
+
+## Props
+
+### GlassDrawer
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Default open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Fired when the open state changes |
+| `shouldScaleBackground` | `boolean` | `true` | Scale the page behind the drawer |
+| `direction` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side the drawer opens from |
+| `dismissible` | `boolean` | `true` | Allow dismissing by dragging or clicking overlay |
+
+All `vaul` Drawer props are also supported.

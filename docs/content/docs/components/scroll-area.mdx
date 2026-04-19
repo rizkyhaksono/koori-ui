@@ -1,0 +1,38 @@
+---
+title: GlassScrollArea
+description: A custom styled, cross-browser scroll container with thin glass scrollbars.
+---
+
+## Preview
+
+<Preview>
+<ScrollAreaDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassScrollArea } from "koori-ui";
+
+<GlassScrollArea className="h-40 w-64">
+  {/* long content */}
+</GlassScrollArea>
+```
+
+## Props
+
+### GlassScrollArea
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `type` | `"auto" \| "always" \| "scroll" \| "hover"` | `"hover"` | When scrollbars are visible |
+| `scrollHideDelay` | `number` | `600` | Delay in ms before hiding scrollbars |
+| `dir` | `"ltr" \| "rtl"` | — | Reading direction |
+
+### GlassScrollBar
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` | Scrollbar axis |
+
+All Radix ScrollArea props are also supported.

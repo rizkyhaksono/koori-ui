@@ -1,0 +1,54 @@
+---
+title: GlassMenubar
+description: A desktop-style menu bar with nested dropdown menus.
+---
+
+## Preview
+
+<Preview>
+<MenubarDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import {
+  GlassMenubar,
+  GlassMenubarMenu,
+  GlassMenubarTrigger,
+  GlassMenubarContent,
+  GlassMenubarItem,
+  GlassMenubarSeparator,
+} from "koori-ui";
+
+<GlassMenubar>
+  <GlassMenubarMenu>
+    <GlassMenubarTrigger>File</GlassMenubarTrigger>
+    <GlassMenubarContent>
+      <GlassMenubarItem>New Tab</GlassMenubarItem>
+      <GlassMenubarSeparator />
+      <GlassMenubarItem>Print…</GlassMenubarItem>
+    </GlassMenubarContent>
+  </GlassMenubarMenu>
+</GlassMenubar>
+```
+
+## Props
+
+### GlassMenubar
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Controlled active menu |
+| `defaultValue` | `string` | — | Default active menu |
+| `onValueChange` | `(value: string) => void` | — | Fired when active menu changes |
+| `loop` | `boolean` | `true` | Whether keyboard navigation loops |
+
+### GlassMenubarItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `disabled` | `boolean` | `false` | Disable the item |
+| `onSelect` | `(event) => void` | — | Fired when the item is selected |
+
+All Radix Menubar props are also supported.

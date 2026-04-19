@@ -1,0 +1,35 @@
+---
+title: GlassEmpty
+description: An empty state indicator with icon, title, description, and optional action.
+---
+
+## Preview
+
+<PreviewColumn>
+<EmptyDemo />
+</PreviewColumn>
+
+## Usage
+
+```tsx
+import { GlassEmpty, GlassButton } from "koori-ui";
+import { Inbox } from "lucide-react";
+
+<GlassEmpty
+  icon={<Inbox className="h-6 w-6" />}
+  title="No messages"
+  description="When you receive new messages they will show up here."
+  action={<GlassButton variant="primary">Refresh</GlassButton>}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `icon` | `ReactNode` | `<Inbox />` | Icon shown at the top |
+| `title` | `string` | — | Main heading text |
+| `description` | `string` | — | Supporting subtitle |
+| `action` | `ReactNode` | — | Call-to-action rendered below the description |
+
+All native `<div>` props are also accepted.

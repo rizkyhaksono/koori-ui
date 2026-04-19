@@ -1,0 +1,46 @@
+---
+title: GlassToggleGroup
+description: A set of two-state buttons that can be toggled on or off.
+---
+
+## Preview
+
+<Preview>
+<ToggleGroupDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassToggleGroup, GlassToggleGroupItem } from "koori-ui";
+import { Bold, Italic, Underline } from "lucide-react";
+
+<GlassToggleGroup type="single" defaultValue="bold" variant="outline">
+  <GlassToggleGroupItem value="bold"><Bold className="h-4 w-4" /></GlassToggleGroupItem>
+  <GlassToggleGroupItem value="italic"><Italic className="h-4 w-4" /></GlassToggleGroupItem>
+  <GlassToggleGroupItem value="underline"><Underline className="h-4 w-4" /></GlassToggleGroupItem>
+</GlassToggleGroup>
+```
+
+## Props
+
+### GlassToggleGroup
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `type` | `"single" \| "multiple"` | — | Whether one or multiple items can be active |
+| `value` | `string \| string[]` | — | Controlled value |
+| `defaultValue` | `string \| string[]` | — | Default value |
+| `onValueChange` | `(value) => void` | — | Fired when value changes |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"` | Size of all items |
+| `variant` | `"default" \| "outline"` | `"default"` | Visual style |
+| `disabled` | `boolean` | `false` | Disable the whole group |
+
+### GlassToggleGroupItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | — | Unique value for the item |
+| `disabled` | `boolean` | `false` | Disable the item |
+
+All Radix ToggleGroup props are also supported.

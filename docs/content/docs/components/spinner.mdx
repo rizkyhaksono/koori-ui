@@ -1,0 +1,37 @@
+---
+title: GlassSpinner
+description: A simple animated loading spinner with optional label.
+---
+
+## Preview
+
+<Preview>
+<SpinnerDemo />
+</Preview>
+
+## Usage
+
+```tsx
+import { GlassSpinner } from "koori-ui";
+
+<GlassSpinner />
+<GlassSpinner size="lg" label="Loading..." />
+```
+
+## Sizes
+
+```tsx
+<GlassSpinner size="sm" />
+<GlassSpinner size="md" />
+<GlassSpinner size="lg" />
+<GlassSpinner size="xl" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `"sm" \| "md" \| "lg" \| "xl"` | `"md"` | Spinner size |
+| `label` | `string` | `"Loading"` | Accessible label rendered below the spinner if set |
+
+All native `<div>` props are also accepted.
