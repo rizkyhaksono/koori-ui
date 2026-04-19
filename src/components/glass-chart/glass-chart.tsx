@@ -6,6 +6,8 @@ import {
     Bar,
     BarChart,
     CartesianGrid,
+    Line,
+    LineChart,
     ResponsiveContainer,
     Tooltip,
     XAxis,
@@ -176,6 +178,69 @@ export function GlassBarChart({
                         />
                     ))}
                 </BarChart>
+            </ResponsiveContainer>
+        </div>
+    );
+}
+
+/* ---------- GlassLineChart ---------- */
+export function GlassLineChart({
+    data,
+    className,
+    height = 300,
+    categories,
+    index,
+}: {
+    data: any[];
+    className?: string;
+    height?: number;
+    categories: { key: string; color: string; name?: string }[];
+    index: string;
+}) {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        const raf = requestAnimationFrame(() => setMounted(true));
+        return () => cancelAnimationFrame(raf);
+    }, []);
+
+    if (!mounted) {
+        return <div className={cn("w-full", className)} style={{ height, minHeight: height }} />;
+    }
+
+    return (
+        <div className={cn("w-full", className)} style={{ height, minHeight: height, minWidth: 0 }}>
+            <ResponsiveContainer width="100%" height="100%" minWidth={200}>
+                <LineChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.06)" />
+                    <XAxis
+                        dataKey={index}
+                        stroke="rgba(255,255,255,0.4)"
+                        fontSize={12}
+                        tickLine={false}
+                        axisLine={false}
+                        dy={10}
+                    />
+                    <YAxis
+                        stroke="rgba(255,255,255,0.4)"
+                        fontSize={12}
+                        tickLine={false}
+                        axisLine={false}
+                        tickFormatter={(value) => `${value}`}
+                    />
+                    <Tooltip content={<GlassChartTooltip />} cursor={{ stroke: "rgba(255,255,255,0.1)", strokeWidth: 1, strokeDasharray: "4 4" }} />
+                    {categories.map((cat) => (
+                        <Line
+                            key={cat.key}
+                            type="monotone"
+                            dataKey={cat.key}
+                            name={cat.name || cat.key}
+                            stroke={cat.color}
+                            strokeWidth={2}
+                            dot={{ r: 3, strokeWidth: 0, fill: cat.color }}
+                            activeDot={{ r: 5, strokeWidth: 0, fill: cat.color }}
+                        />
+                    ))}
+                </LineChart>
             </ResponsiveContainer>
         </div>
     );
